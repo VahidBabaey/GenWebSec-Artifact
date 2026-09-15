@@ -69,7 +69,7 @@ the same inputs without those inputs being released.
 
 ## Outstanding before publication
 
-- Choose and add a `LICENSE` (currently a placeholder).
+- The `LICENSE` is set to MIT (SPDX `MIT` in `CITATION.cff`).
 - Fill the repository URL / DOI / release date placeholders in `CITATION.cff` and the
   `[INSERT DATA-REPOSITORY LINK]` in the paper appendix.
 - Re-run the audit and regenerate `SHA256SUMS` as the final pre-release step.

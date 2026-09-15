@@ -192,3 +192,13 @@ See `CITATION.cff`.
 
 For defects in the artifact, open an issue. For security concerns about the artifact itself, follow
 `SECURITY.md` instead of opening a public issue.
+
+## 11. License
+
+This repository is released under the MIT License (SPDX: `MIT`); see `LICENSE`. Copyright (c) 2026
+Vahid Babaey and Arun Ravindran, The University of North Carolina at Charlotte.
+
+The MIT terms cover the material authored for this artifact (code, configurations, derived results,
+generated rules, and documentation). Third-party datasets referenced by this repository (for example
+CSIC/Torpeda 2012) are not redistributed here and keep their own terms; see `data/` for retrieval
+instructions and provenance.

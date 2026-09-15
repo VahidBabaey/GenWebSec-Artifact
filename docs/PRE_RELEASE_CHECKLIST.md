@@ -25,15 +25,13 @@ name the evidence; pending items are release-time steps or author decisions.
 
 ## Remaining before the repository is made public
 
-Three things, all requiring an author decision or a publication-time action:
+The `LICENSE` is set: **MIT** (`LICENSE`; SPDX `MIT` recorded in `CITATION.cff`). Two
+publication-time actions remain:
 
-1. **`LICENSE`** -- currently a placeholder; a public repository needs a real
-   license (the file suggests MIT/Apache-2.0 for code, CC BY 4.0 for data). This is
-   the one hard blocker.
-2. **Release identifiers** -- fill the repository URL, DOI, and release date in
+1. **Release identifiers** -- fill the repository URL, DOI, and release date in
    `CITATION.cff`, and replace `[INSERT DATA-REPOSITORY LINK BEFORE SUBMISSION.]` in
    the paper appendix, once the repo is public and (optionally) a Zenodo DOI is minted.
-3. **Final integrity pass** -- freeze/tag the release (items 2 and 17), then re-run
+2. **Final integrity pass** -- freeze/tag the release (items 2 and 17), then re-run
    the audit and regenerate `SHA256SUMS` as the last step so the checksums cover the
    exact published tree.
 
