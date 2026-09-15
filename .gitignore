@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# WSL Zone.Identifier alternate-stream files
+*:Zone.Identifier
+
+# Secrets — never commit
+.env
+*.key

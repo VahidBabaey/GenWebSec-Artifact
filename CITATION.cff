@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this artifact or refer to these results, please cite the paper below."
+title: "GenWebSec artifact: adaptive WAF hardening with co-evolving LLM attack and defense agents"
+abstract: >-
+  Reproducibility artifacts for GenWebSec, an execution-grounded framework that couples a
+  large-language-model attack agent with a large-language-model defense agent to harden a web
+  application firewall against SQL-injection and cross-site-scripting attacks. The repository
+  contains the per-seed, per-context experimental results, the generated ModSecurity rules, the
+  redacted defense-agent prompts, and the scripts that regenerate the tables and figures reported in
+  the paper. Attack-agent prompts and raw bypass payloads are intentionally withheld.
+type: software
+authors:
+  - given-names: Vahid
+    family-names: Babaey
+    affiliation: "Department of Electrical and Computer Engineering, University of North Carolina at Charlotte"
+    email: vbabaey@charlotte.edu
+  - given-names: Arun
+    family-names: Ravindran
+    affiliation: "Department of Electrical and Computer Engineering, University of North Carolina at Charlotte"
+    email: arun.ravindran@charlotte.edu
+keywords:
+  - web application firewall
+  - large language model
+  - SQL injection
+  - cross-site scripting
+  - adversarial co-evolution
+  - ModSecurity
+  - OWASP Core Rule Set
+license: "[LICENSE IDENTIFIER REQUIRED BEFORE PUBLICATION]"
+repository-code: "[PUBLIC REPOSITORY URL REQUIRED BEFORE PUBLICATION]"
+version: "v0-unreleased"
+date-released: "[RELEASE DATE REQUIRED BEFORE PUBLICATION]"
+
+preferred-citation:
+  type: article
+  title: "Adaptive Web Application Firewall Hardening with Co-Evolving LLM Attack and Defense Agents"
+  authors:
+    - given-names: Vahid
+      family-names: Babaey
+      affiliation: "Department of Electrical and Computer Engineering, University of North Carolina at Charlotte"
+    - given-names: Arun
+      family-names: Ravindran
+      affiliation: "Department of Electrical and Computer Engineering, University of North Carolina at Charlotte"
+  # The paper is under submission. Journal, year, volume, pages, and DOI are filled in on acceptance,
+  # and the artifact is tagged with the release identifier recorded in `version` above.
+  journal: "[JOURNAL REQUIRED ON ACCEPTANCE]"
+  year: 2026
+  doi: "[DOI REQUIRED ON ACCEPTANCE]"

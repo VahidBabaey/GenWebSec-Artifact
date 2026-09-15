@@ -1,0 +1,38 @@
+# RQ1: can the LLM attack agent find execution-valid SQLi/XSS attacks that
+# bypass the baseline (CRS-only) WAF?
+#
+# Inherits common.yaml. Values read from:
+#   pilot_A1_customapp_attack_only_v2.py  (SQLi)
+#   pilot_A2_customxss_attack_only_v2.py  (XSS)
+
+experiment: rq1-baseline
+regime: "attack only, no defense synthesis"
+ruleset_under_test: "CRS-only (empty generated-rule include)"
+
+attack_generation:
+  batch_size: 50                       # candidates per iteration; source: A1...:58 (PAYLOADS_PER_TEMP sums to 50)
+  temperatures: [0.7, 1.0, 1.3]        # source: A1...:57 (TEMPERATURES)
+  payloads_per_temperature: [17, 17, 16]   # source: A1...:58 (PAYLOADS_PER_TEMP)
+  max_iterations: 10                   # source: A1...:59 (MAX_ITERATIONS)
+  max_candidates_per_run: 500          # 10 iterations x 50
+  dedup_uniqueness_threshold: 0.3      # exact/near-duplicate removal; source: A1...:60 (UNIQUENESS_THRESHOLD)
+  seed_by: "waf_bypass"                # evolve from winners that are valid AND bypass CRS; source: A1...:54
+  max_tokens: 2048                     # source: A1...:218
+
+targets_and_pages:
+  customapp_sqli: ["login", "search", "product", "filter"]
+  customxss:      ["search", "calc"]
+
+seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   # 5 pages(SQLi)+2(XSS) x 10 seeds
+
+validity_oracle:
+  sqli: "observable security effect (auth bypass, unauthorized/full-table disclosure, protected-value recovery); response codes/errors alone insufficient"
+  xss: "Selenium + Chromium observe the expected JavaScript dialog"
+
+waf_outcome: "HTTP 403 => blocked; any other response => bypass"
+
+output_paths:
+  sqli: "results/V2/CustomApp_A1_CRSonly_seed<seed>/"
+  xss:  "results/V2/CustomXSS_A2_CRSonly_seed<seed>/"
+  per_candidate_records: "A1_customapp_<page>_records.jsonl"
+  per_iteration_metrics: "A1_customapp_<page>_metrics.csv"

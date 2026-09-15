@@ -1,0 +1,214 @@
+GenWebSec -- exact software versions
+====================================
+
+Every value below was read from the live experimental host, not transcribed from
+the paper. The command used is shown with each group so the record can be
+re-derived. Collected 2026-09-14.
+
+
+1. OPERATING SYSTEM
+-------------------
+  Distribution        Ubuntu 22.04.5 LTS (Jammy Jellyfish)
+  Kernel              6.6.87.2-microsoft-standard-WSL2
+  Kernel build        #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025
+  Platform            WSL2 on Windows 11
+
+  The kernel is pinned rather than stock. The stock WSL 6.18.x kernel deadlocks
+  on per-VMA locking during process fork and teardown, which wedged Apache on
+  reload-heavy defense runs. The pinned kernel 6.6.87.2 was extracted from the
+  official WSL 2.5.10 msixbundle and selected in .wslconfig. See hardware.md.
+
+  Commands: cat /etc/os-release ; uname -r ; cat /proc/version
+
+
+2. WEB SERVER AND WAF
+---------------------
+  Apache                 2.4.52 (Ubuntu)
+  Apache package         2.4.52-1ubuntu4.19
+  Apache build date      2026-03-05T18:04:29
+  ModSecurity            2.9.5   (package libapache2-mod-security2 2.9.5-1)
+  ModSecurity mode       blocking (SecRuleEngine On)
+  Apache module          security2_module (shared)
+  OWASP CRS              3.3.2   (package modsecurity-crs 3.3.2-1)
+  CRS signature          SecComponentSignature "OWASP_CRS/3.3.2"
+  CRS paranoia level     1
+  CRS anomaly thresholds inbound 5, outbound 4
+  CRS rule exclusions    none
+
+  CRS is the Debian/Ubuntu package, not a git checkout, so there is no upstream
+  commit hash to record. The package version and the SecComponentSignature
+  together identify it exactly. The configuration files themselves are committed
+  under configs/crs/ and configs/modsecurity/.
+
+  Commands: apache2 -v ; dpkg -l apache2 libapache2-mod-security2 modsecurity-crs
+            apachectl -M | grep -i security
+            grep -rh SecComponentSignature /usr/share/modsecurity-crs
+
+
+3. PYTHON RUNTIME
+-----------------
+  Python              3.10.12
+  Virtualenv          <repo>/.webenv        <-- the runtime of record
+
+  IMPORTANT. The host also has a system-wide Python 3.10 with a DIFFERENT and
+  OLDER set of packages (selenium 4.38.0, openai 1.68.2). That interpreter was
+  NOT used for any reported run. All reported experiments ran inside the
+  .webenv virtualenv. Anyone reproducing this work must create the virtualenv
+  from environment/requirements.txt and run inside it, or the Selenium and
+  OpenAI client versions will not match.
+
+  Key packages in the virtualenv (full pinned set in requirements.txt):
+
+      openai                   2.8.0
+      selenium                 4.39.0
+      scikit-learn             1.7.2
+      scipy                    1.15.3
+      numpy                    2.2.6
+      Levenshtein              0.27.3
+      python-Levenshtein       0.27.3
+      mysql-connector-python   9.5.0
+      pydantic                 2.12.4
+      requests                 2.32.5
+      python-dotenv            1.2.1
+      langgraph                1.0.3
+
+  Commands: .webenv/bin/python --version ; .webenv/bin/python -m pip freeze
+
+
+4. BROWSER (XSS validity oracle)
+--------------------------------
+  Chromium            150.0.7871.128     (snap package, revision 3499)
+  ChromeDriver        bundled with that snap revision, so versions match exactly
+  ChromeDriver path   /snap/chromium/current/usr/lib/chromium-browser/chromedriver
+  Size                28,107,496 bytes
+
+  /usr/bin/chromedriver is a 312-byte shell wrapper that execs the snap binary.
+  The XSS oracle drives Chromium through Selenium and confirms a payload only
+  when the expected JavaScript dialog is observed.
+
+  Commands: cat /snap/chromium/current/meta/snap.yaml
+            readlink -f /snap/chromium/current
+
+
+5. DATABASES
+------------
+  SQLite              3.37.2   (library linked by the Python sqlite3 module)
+  MySQL               8.0.45   (package 8.0.45-0ubuntu0.22.04.1)
+
+  The sqlite3 command-line tool is not installed on this host; SQLite is reached
+  only through Python. The controlled SQLi application uses SQLite. bWAPP uses
+  MySQL inside its container.
+
+  Commands: python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+            mysql --version
+
+
+6. CONTAINER RUNTIME AND TARGET APPLICATIONS
+--------------------------------------------
+  Docker              29.1.3   (build 29.1.3-0ubuntu3~22.04.2)
+
+  Docker runs as the native docker.io daemon inside the Ubuntu WSL distribution.
+  Docker Desktop integration is deliberately removed, because its /usr/bin/docker
+  symlink hijacks the CLI. iptables is switched to the legacy backend, because
+  the pinned 6.6 kernel lacks the nf_tables addrtype match that dockerd needs.
+
+  Controlled applications (not containerized, run directly from this repository's
+  source on the host):
+      SQLi application   Python + SQLite, served at 127.0.0.1:8080
+      XSS application    PHP, served by Apache from /var/www/html/customxss
+
+  Third-party generalization targets (containerized):
+
+    OWASP Juice Shop
+      image          bkimminich/juice-shop
+      digest         sha256:73c53fbf442e8337b3ea3d98c7e8550308854701ebdfce4cc39768f36b75430e
+      app version    20.2.0
+      source commit  5658473   (github.com/juice-shop/juice-shop)
+      image created  2026-08-11T05:21:13Z
+      container      created 2026-08-17T18:42:43Z, backend on 127.0.0.1:3000
+      licence        MIT
+
+    bWAPP
+      image          raesene/bwapp
+      digest         sha256:2f41183ea9f9e8fb36678d7a2a0c8a9db9a59f4569cee02fe6664b419b2600ee
+      image created  2016-02-15T10:35:01Z
+      container      created 2026-08-18T15:56:17Z, container port 80 -> host 8082
+      app version    NOT DETERMINABLE FROM THE IMAGE. This image provisions bWAPP
+                     at container start through /run.sh rather than baking the
+                     application into an image layer, so no version string exists
+                     in the image filesystem to read. The image digest above is
+                     the reproducible identifier: pulling that digest reproduces
+                     the exact target used here.
+
+  Commands: docker --version
+            docker image inspect <image> --format '{{.Id}} {{.RepoDigests}}'
+            docker image inspect <image> --format '{{json .Config.Labels}}'
+            docker inspect <container> --format '{{.Created}} {{.HostConfig.PortBindings}}'
+
+
+7. REVERSE-PROXY LAYOUT
+-----------------------
+  Apache listens on port 80 and proxies to each backend. ModSecurity inspects
+  every request at the proxy, before it reaches any application, so all three
+  targets are evaluated under one identical WAF configuration. HTTP 403 denotes
+  a WAF block.
+
+      http://localhost/customapp/  ->  http://127.0.0.1:8080/    SQLi application
+      http://localhost/juice/      ->  http://127.0.0.1:3000/    OWASP Juice Shop
+      http://localhost/bwapp/      ->  http://127.0.0.1:8082/    bWAPP
+
+  Committed as configs/modsecurity/00-genwebsec-proxy.conf.
+
+  Commands: cat /etc/modsecurity/custom/00-genwebsec-proxy.conf
+            grep Listen /etc/apache2/ports.conf
+
+
+8. GENERATED-RULE INCLUDE
+-------------------------
+  Include directive   IncludeOptional /etc/modsecurity/custom/*.conf
+                      (from /etc/apache2/mods-enabled/security2.conf)
+  Rule file written   /etc/modsecurity/custom/sft_rule.conf
+  Written by          helpers/modsec_helpers.py
+
+  The defense agent's accepted rules are written to that single include file.
+  An empty file is the CRS-only baseline condition. Before any reload the
+  harness runs the Apache configuration test, and a candidate that fails the
+  test is discarded rather than deployed.
+
+  The filename is a historical artifact of an earlier project and does not
+  indicate anything about the rules it holds.
+
+  Commands: grep -rn Include /etc/apache2/mods-enabled/security2.conf
+            grep -rn DEFAULT_RULE_PATH helpers/modsec_helpers.py
+
+
+9. MODELS AND API
+-----------------
+  Interface           OpenRouter v1 chat-completions
+  Client              OpenAI Python SDK 2.8.0
+
+  Routing identifiers as written in the experiment code:
+
+    openai/gpt-4.1-mini          hardening attack agent, hardening defense agent,
+                                 and baseline attack generator
+    anthropic/claude-opus-4.7    held-out attacker on the controlled applications
+    meta-llama/llama-4-maverick  held-out attacker for cross-application transfer
+
+  These are provider routing identifiers. OpenRouter does not expose immutable
+  provider snapshot hashes, so no snapshot identifier can be recorded. This is a
+  genuine limit on exact reproducibility of model behaviour, not an omission.
+
+  Generation parameters are recorded with the experiment configuration in
+  configs/experiment/.
+
+  Command: grep -rhoE '"(openai|anthropic|meta-llama)/[A-Za-z0-9._-]+"' WorkFlowV2/*.py
+
+
+10. WHAT IS NOT USED
+--------------------
+  conda               Not used. The doc's suggested conda-environment.yml is
+                      therefore absent by design; environment/requirements.txt is
+                      the equivalent and is a real pinned freeze of the
+                      virtualenv actually used.
+  sqlite3 CLI         Not installed; SQLite is used only through Python.
+  Docker Desktop      Deliberately disabled in favour of the native daemon.

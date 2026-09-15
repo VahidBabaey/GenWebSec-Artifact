@@ -1,0 +1,61 @@
+# Parameters shared by every GenWebSec experiment.
+#
+# These values are a faithful record read from the experiment code, not a
+# reconstruction. The pilots are driven by environment variables; the
+# `env` and `source` fields below give the variable name and the file:line
+# each value comes from, so any value here can be traced back and re-set.
+#
+# Per-experiment files (rq1-baseline.yaml, rq2-static.yaml, rq3-adaptive.yaml,
+# rq4-generalization.yaml, epsilon-sweep.yaml) add or override on top of this.
+
+model:
+  provider_interface: "OpenRouter v1 chat-completions"
+  client: "openai-python 2.8.0"
+  attacker: "openai/gpt-4.1-mini"          # source: pilot_C1_customapp_coevolution_v2.py:73
+  defender: "openai/gpt-4.1-mini"          # source: pilot_D1_customapp_defense_v2.py:58
+  top_p: "provider default (not set)"
+  defense_temperature: 0.3                  # source: pilot_D1_customapp_defense_v2.py:373,452
+  defense_max_tokens_grouped: 2048          # grouped (CG/RG) synthesis call; source: :373
+  defense_max_tokens_per_payload: 1024      # per-payload synthesis call; source: :452
+  # Provider seed is derived, not fixed: run_seed * 1e6 + per-call index.
+  provider_seed_formula: "run_seed * 1000000 + per_call_index"   # source: :527
+
+seeds:
+  count: 10
+  values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  env: "D1_SEED / D2_SEED / C1_SEED / C2_SEED / A1_SEED / A2_SEED"
+  note: >-
+    Each run sets its own seed. The seed makes the corpus sample and the provider
+    seed reproducible. When the env var is unset the scripts fall back to 42
+    (defense) or 0 (attack); the reported runs used 1..10 explicitly.
+  source: "pilot_D1_customapp_defense_v2.py:67 ; WorkFlowV2/run_RG_all.py:69"
+
+rule_admission:
+  benign_fp_threshold: 0.01                 # cumulative, 1% ; source: pilot_D1...:61 (MAX_FP_RATE)
+  synthesis_attempts_per_unit: 3            # source: pilot_D1...:60 (MAX_ATTEMPTS)
+  representative_prompt_cap: 15             # N_rep ; source: pilot_D1...:85 (MAX_PAYLOADS_PER_PROMPT)
+  config_test_before_reload: true           # a candidate failing apachectl configtest is discarded
+
+clustering:
+  algorithm: "DBSCAN"
+  metric: "precomputed normalized-Levenshtein distance"
+  distance_definition: "1.0 - Levenshtein.ratio(a, b)"   # source: pilot_D1...:295
+  min_samples: 1                            # source: pilot_D1...:83 (CLUSTERING_MIN_SAMPLES)
+  operating_epsilon: 0.3                    # source: pilot_D1...:77 (default of CLUSTERING_EPS)
+  cluster_coverage: 1.0                     # min fraction of a unit its rules must cover; source: :78
+  implementation_note: >-
+    With min_samples=1 DBSCAN is exactly connected components, so the pilots build
+    the distance matrix and label connected components directly. The code notes
+    this is label-identical to scikit-learn DBSCAN(metric='precomputed') for every
+    epsilon in {0.1..0.5}.
+  applied: "separately within each attack family and injection context"
+
+defense_transforms:
+  sqli: ["t:urlDecodeUni", "t:replaceComments", "t:compressWhitespace", "t:lowercase"]   # source: pilot_D1...:65
+  xss:  ["t:urlDecodeUni", "t:htmlEntityDecode", "t:jsDecode", "t:compressWhitespace"]   # source: pilot_D2...:65
+
+target_contexts:
+  sqli_pages: ["login", "search", "product", "filter"]     # controlled SQLi app (SQLite), port 8080
+  xss_pages:  ["search", "calc"]                            # controlled XSS app (PHP); search=JS-string, calc=eval sink
+  generalization_targets: ["bwapp", "juice"]               # PHP/MySQL and Node.js/SQLite
+  waf: "Apache + ModSecurity 2.9.5 + OWASP CRS 3.3.2, paranoia level 1"

@@ -1,0 +1,14 @@
+paper_table,section,description,backing,n_runs
+tab:rq1-attackgen,main,RQ1 attack generation against baseline CRS,run_manifests: experiment=RQ1,30
+fig:rq1-trajectory,main,RQ1 validated CRS bypasses per generation round,run_manifests: experiment=RQ1,30
+tab:rq2,main,fixed-corpus synthesis (PP/RG/CG) at eps=0.3,"run_manifests: experiment=RQ2, epsilon=0.3",180
+tab:rq3,main,adaptive hardening (PP/CG) at eps=0.3,"run_manifests: experiment=RQ3, epsilon=0.3",120
+tab:rq4-sqli,main,SQLi held-out block rate at eps=0.3,"run_manifests: experiment=RQ4, family=SQLi, epsilon=0.3",40
+tab:rq4-xss,main,XSS held-out block rate at eps=0.3,"run_manifests: experiment=RQ4, family=XSS, epsilon=0.3",15
+tab:latency,main,deployed WAF request latency,"results/latency/ (deployment benchmark, not a synthesis run)",
+tab:rq2-eps,appendix,RQ2 CG sensitivity swept over epsilon,"run_manifests: experiment=RQ2, strategy=CG-Static",300
+tab:rq3-coevolution,appendix,RQ3 CG-Adaptive sensitivity swept over epsilon,"run_manifests: experiment=RQ3, strategy=CG-Adaptive",300
+tab:rq4-eps-summary,appendix,RQ4 aggregate block rates over the epsilon sweep,run_manifests: experiment=RQ4,275
+tab:fp-incidents,appendix,external false-positive incidents (frozen-rule benign replay),results/rq4_fp/,
+tab:rq3-trace,appendix,representative CG-Adaptive Login round-by-round trace,run_manifests: run_id=RQ3_SQLi_CG-Adaptive_login_eps0.3_seed7,1
+tab:nonllm,appendix,non-LLM validation funnel and Dalfox replay,results/nonllm/ (non-LLM sources + frozen rules),

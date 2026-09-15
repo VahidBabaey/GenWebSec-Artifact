@@ -1,0 +1,5 @@
+# Preserve every file's bytes exactly on checkout, on every platform.
+# The released SHA256SUMS is computed over these bytes, so disabling end-of-line
+# conversion is what lets `sha256sum -c SHA256SUMS` still pass after a clone on
+# Linux or macOS. Do not enable autocrlf/eol conversion for this repository.
+* -text

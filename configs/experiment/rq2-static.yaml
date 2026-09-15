@@ -1,0 +1,60 @@
+# RQ2: on a FIXED bypass corpus, how does presenting bypasses individually (PP),
+# in random groups (RG), or in structural clusters (CG) affect rule count,
+# synthesis cost, and safety?
+#
+# This is the static regime: no new attacks are generated during hardening; all
+# three strategies run on the same seed-specific corpus.
+#
+# Inherits common.yaml. Values read from:
+#   pilot_D1_customapp_defense_v2.py       (SQLi, PP and CG)
+#   pilot_D2_customxss_defense_v2.py       (XSS, PP and CG)
+#   pilot_RG_D1_customapp_defense.py       (SQLi, RG control)
+#   pilot_RG_D2_customxss_defense.py       (XSS, RG control)
+
+experiment: rq2-static
+regime: "static (fixed corpus, no renewed attack generation)"
+
+fixed_corpus:
+  size: 300                            # distinct validated CRS bypasses per (page, seed); source: D1...:66 (MAX_CORPUS)
+  sampling: "random, non-duplicate, reproducible from the run seed"
+  source_corpus: "pooled union of the A1/A2 winners; results/V2/_item1_corpus/"
+
+strategies:
+  - name: PP
+    label: "per-payload synthesis"
+    mode_env: "D1_MODE=per_payload"    # source: D1...:56
+    synthesis_unit: "one bypass at a time (singleton partition)"
+  - name: RG
+    label: "random-group control"
+    mode_env: "D1_MODE=random_group"   # source: run_RG_all.py:74
+    synthesis_unit: "groups whose SIZES equal the real DBSCAN cluster sizes on the same payloads, with RANDOM membership"
+    rng: "random.Random(run_seed)"     # source: pilot_RG_D1...:70
+    construction: "sizes copied from the real DBSCAN clusters; membership randomised"   # source: pilot_RG_D1...:617,630
+  - name: CG
+    label: "cluster-guided synthesis"
+    mode_env: "D1_MODE=clustering"     # source: D1...:56
+    synthesis_unit: "DBSCAN structural clusters (see common.yaml: clustering)"
+
+hardening_budgets:
+  max_iterations: 10                   # source: D1...:59
+  synthesis_attempts_per_unit: 3       # source: D1...:60 (MAX_ATTEMPTS)
+  benign_fp_threshold: 0.01            # source: D1...:61
+
+clustering:
+  epsilon: 0.3                         # operating point for the headline RQ2 tables
+  # the full 0.1..0.5 sweep is a separate file: epsilon-sweep.yaml
+
+seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   # 10 defense seeds per (family, page, strategy)
+
+pages:
+  sqli: ["login", "search", "product", "filter"]
+  xss:  ["search", "calc"]
+
+output_paths:
+  cg_sqli: "results/V2/CustomApp_D1/CustomApp_D1_eps<eps>_seed<seed>/"
+  cg_xss:  "results/V2/CustomApp_D2/CustomXSS_D2_eps<eps>_seed<seed>/"
+  pp_sqli: "results/V2/CustomApp_D1-PP/"
+  pp_xss:  "results/V2/CustomApp_D2-PP/"
+  rg_sqli: "results/V2/Random-Groups/CustomApp_D1_eps0.3_seed<seed>/"
+  rg_xss:  "results/V2/Random-Groups/CustomXSS_D2_eps0.3_seed<seed>/"
+  rules_file: "D1_customapp_<page>_<mode>_rules.txt"

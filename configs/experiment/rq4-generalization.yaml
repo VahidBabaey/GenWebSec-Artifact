@@ -1,0 +1,48 @@
+# RQ4: after hardening is complete and the rules are FROZEN, do the defenses
+# generalize across shifts in attacker model, application/backend, and benign traffic?
+#
+# No rule generation happens in RQ4. Frozen rulesets are replayed against held-out
+# attacks and held-out benign traffic.
+#
+# Inherits common.yaml. Values read from:
+#   rq4_replay_heldout.py   (SQLi replay)
+#   rq4_replay_xss.py       (XSS replay)
+
+experiment: rq4-generalization
+regime: "frozen (no synthesis, no stopping, no admission; replay only)"
+
+frozen_rulesets:
+  origin: ["CG-Static", "CG-Adaptive"]
+  epsilon: 0.3                          # default RQ4_EPS; sweep values also replayed (see epsilon-sweep.yaml)
+  seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   # source: rq4_replay_heldout.py:48 (SEEDS = range(1,11))
+  transfer_by_family: >-
+    per seed, rules learned across the four SQLi contexts are combined into one SQLi
+    ruleset and replayed unchanged against every external SQLi endpoint; likewise the
+    two XSS contexts are combined for the external XSS endpoint.
+
+shifts_evaluated:
+  attacker_model_and_source:
+    controlled_apps_heldout_attacker: "anthropic/claude-opus-4.7"
+    cross_application_heldout_attacker: "meta-llama/llama-4-maverick"
+    non_llm_sources: ["sqlmap", "CSIC/Torpeda 2012", "Dalfox"]     # see configs note and data/
+  application_and_backend:
+    controlled: ["customapp (SQLite)", "customxss (PHP)"]
+    external: ["bwapp (PHP/MySQL)", "juice (Node.js/SQLite)"]
+    note: "Juice Shop is excluded from XSS transfer (payload rides a browser-only URL fragment ModSecurity never sees)."
+  benign_distribution:
+    corpora: ["CSIC 2012 (8,363 requests)", "bWAPP benign", "Juice Shop benign"]
+    note: "held out from both rule generation and rule admission; see data/ for provenance and counts"
+
+held_out_attack_population:
+  definition: "attacks that satisfy the target's validity oracle AND bypass baseline CRS before replay against the frozen ruleset"
+  size: "all frozen distinct winners per (page, seed); N varies by cell (not fixed)"
+
+pages:
+  sqli: ["login", "search", "product", "filter"]   # source: rq4_replay_heldout.py:49
+  xss:  ["search", "calc"]                          # source: rq4_replay_xss.py:40
+
+output_paths:
+  sqli: "results/V2/A1_HeldOut/A1_<target>_heldout_seed<seed>/Defense_results/"
+  xss:  "results/V2/A2_HeldOut/..."
+  non_llm: "results/V2/NonLLM_Results/"
+  matrix: "results/V2/RQ4_matrix_full.csv"

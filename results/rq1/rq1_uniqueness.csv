@@ -1,0 +1,7 @@
+family,page,label,generated,unique_generated,exact_duplicates,valid,unique_valid,bypasses,unique_bypasses,pct_unique
+SQLi,login,Login form,2494,2437,57,2184,2132,2134,2087,97.7
+SQLi,search,Product search,2522,2497,25,2397,2372,2372,2347,99.0
+SQLi,product,URL parameter,2500,2492,8,2351,2343,2337,2329,99.7
+SQLi,filter,Product filter,2505,2480,25,2325,2300,2316,2291,99.0
+XSS,search,Search (JS-string),2488,2403,85,2008,1928,1493,1439,96.6
+XSS,calc,Calculator (eval sink),2491,2477,14,1728,1720,1399,1399,99.4

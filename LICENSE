@@ -1,0 +1,21 @@
+LICENSE NOT YET SELECTED
+========================
+
+This artifact repository MUST NOT be made public until this file is replaced with the actual
+license text. A public repository without a license grants no rights to anyone, which would defeat
+the purpose of releasing a reproducibility artifact.
+
+Pending decision by the authors.
+
+Suggested arrangement for a research artifact of this kind, for the authors to confirm or replace:
+
+  - Source code (scripts/, analysis/, prompts/):  MIT or Apache-2.0
+  - Data and documentation (data/, results/, rules/, logs/, docs/):  CC BY 4.0
+
+If two licenses are used, state clearly in README.md which directories each one covers.
+
+Note that third-party datasets referenced by this repository carry their own terms and are not
+relicensed by this file. Those are not redistributed here; see data/ for retrieval instructions and
+provenance.
+
+Once chosen, record the SPDX identifier in CITATION.cff as well.

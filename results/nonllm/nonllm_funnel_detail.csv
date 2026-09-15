@@ -1,0 +1,17 @@
+source,family,group_kind,group,backend_valid,crs_blocked,crs_bypassing
+sqlmap,SQLi,page,login,16,16,0
+sqlmap,SQLi,page,search,5,5,0
+sqlmap,SQLi,page,product,5,5,0
+sqlmap,SQLi,page,filter,5,5,0
+sqlmap,SQLi,technique,boolean_blind,27,27,0
+sqlmap,SQLi,technique,error_based,2,2,0
+sqlmap,SQLi,technique,time_blind,2,2,0
+CSIC/Torpeda 2012,SQLi,page,login,12,12,0
+CSIC/Torpeda 2012,SQLi,page,search,26,26,0
+CSIC/Torpeda 2012,SQLi,page,product,73,73,0
+CSIC/Torpeda 2012,SQLi,page,filter,113,113,0
+CSIC/Torpeda 2012,SQLi,technique,or_tautology,214,214,0
+CSIC/Torpeda 2012,SQLi,technique,and_based,4,4,0
+CSIC/Torpeda 2012,SQLi,technique,union,6,6,0
+Dalfox,XSS,page,search,23,6,17
+Dalfox,XSS,page,calc,36,8,28

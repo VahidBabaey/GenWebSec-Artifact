@@ -1,0 +1,43 @@
+# DBSCAN epsilon sweep, applied on top of the RQ2 (static) and RQ3 (adaptive)
+# experiments and replayed in RQ4. The paper reports the operating point 0.3;
+# the sweep shows the choice is robust.
+#
+# Values read from:
+#   pilot_D1_customapp_defense_v2.py:77  (CLUSTERING_EPS, sweepable via D1_EPS)
+#   WorkFlowV2/_item10_budget.py:8       (EPS = ["0.1","0.2","0.3","0.4","0.5"])
+#   WorkFlowV2/_item6_cluster_stats.py:16(EPS, SEEDS = range(1,11))
+# and confirmed against the on-disk result directories:
+#   results/V2/CustomApp_D1/CustomApp_D1_eps{0.1,0.2,0.3,0.4,0.5}_seed{1..10}/
+
+experiment: epsilon-sweep
+swept_parameter: "clustering.epsilon (DBSCAN)"
+values: [0.1, 0.2, 0.3, 0.4, 0.5]
+operating_point: 0.3
+min_samples: 1                          # held fixed across the sweep
+seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+applies_to:
+  - "RQ2 static CG (pilot_D1/D2, D1_EPS/D2_EPS)"
+  - "RQ3 adaptive CG (pilot_C1/C2, C1_EPS/C2_EPS)"
+  - "RQ4 frozen-rule replay (rq4_replay_*, RQ4_EPS)"
+
+per_cell_quantities_recorded:
+  - cluster_count
+  - singleton_percentage
+  - median_cluster_size
+  - max_cluster_size
+  - accepted_rules
+  - llm_calls
+  - input_tokens
+  - output_tokens
+  - false_positive_rate
+  - block_rate
+
+pages:
+  sqli: ["login", "search", "product", "filter"]
+  xss:  ["search", "calc"]
+
+note: >-
+  The complete per-context, per-seed sweep matrix belongs in results/ (repository
+  section 9), not here. This file records only the swept values and where they
+  were applied.

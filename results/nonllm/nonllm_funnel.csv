@@ -1,0 +1,4 @@
+source,family,candidates,distinct,backend_valid,crs_bypassing
+sqlmap,SQLi,1316,329,31,0
+CSIC/Torpeda 2012,SQLi,57812,15796,224,0
+Dalfox,XSS,117,39,59,45
