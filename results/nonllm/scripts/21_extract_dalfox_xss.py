@@ -1,3 +1,8 @@
+# REDACTED PUBLIC COPY. The concrete injection-breakout templates and the worked
+# sample payloads have been replaced with a [redacted for safety] marker; the
+# extraction/mapping logic, the sink/context comments, and the counts are intact.
+# See ../README.md for the redaction policy.
+
 #!/usr/bin/env python3
 """
 Item 8 (XSS) Dalfox track -- extract + map.
@@ -8,8 +13,8 @@ XSS_JAVASCRIPT_PAYLOADS_SMALL), un-escape the Rust string literals, dedup, and
 map each to our two JS-context pages using Dalfox's own breakout (js_breakout.rs):
 
   Search  (var query='<input>', single-quote JS string; app backslash-escapes ')
-          -> escaped breakout   \\';<JS>//     (matches the app filter + seed)
-          -> plain   breakout    ';<JS>//      (variant; Route A decides)
+          -> escaped breakout   [breakout redacted]   (matches the app filter + seed)
+          -> plain   breakout    [breakout redacted]   (variant; Route A decides)
   Calculator (eval("document.write(<input>)"), JS expression position)
           -> <JS> direct
 
@@ -89,10 +94,13 @@ def main():
                 js_payloads[p] = name
     payloads = list(js_payloads.keys())
 
-    # map each JS payload to the two pages via Dalfox's breakout
+    # map each JS payload to the two pages via Dalfox's breakout.
+    # The concrete search-page breakout templates are redacted (see ../README.md);
+    # this public copy emits a [breakout redacted] marker in their place, so the
+    # mapping structure is preserved without releasing the app-escaping recipe.
     VARIANTS = [
-        ("search", "search_escaped", lambda js: "\\';" + js + "//"),
-        ("search", "search_plain",   lambda js: "';" + js + "//"),
+        ("search", "search_escaped", lambda js: "[breakout redacted]" + js + "[redacted]"),
+        ("search", "search_plain",   lambda js: "[breakout redacted]" + js + "[redacted]"),
         ("calc",   "calc_direct",    lambda js: js),
     ]
 
@@ -122,13 +130,9 @@ def main():
     L.append("Distinct JS payloads (deduped across both arrays): %d" % len(payloads))
     L.append("Candidate rows (distinct x 3 variants): %d" % len(rows))
     L.append("")
-    L.append("Variants: search_escaped (\\';<JS>//), search_plain (';<JS>//), calc_direct (<JS>)")
+    L.append("Variants: search_escaped ([breakout redacted]), search_plain ([breakout redacted]), calc_direct (<JS>)")
     L.append("")
-    L.append("Sample mapped payloads:")
-    for js in payloads[:6]:
-        L.append("  JS: %s" % js[:80])
-        L.append("     search_escaped: %s" % ("\\';" + js + "//")[:90])
-        L.append("     calc_direct   : %s" % js[:90])
+    L.append("Sample mapped payloads: [redacted for safety]")
     with open(os.path.join(OUT, "counts.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(L) + "\n")
 

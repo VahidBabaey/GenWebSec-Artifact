@@ -59,12 +59,16 @@ python analysis/nonllm_funnel.py
 
 `scripts/` holds the funnel and replay processing code: sqlmap/CSIC/Dalfox
 extraction, the Route A (backend execution) validators, the Route B (CRS) checks,
-and the Dalfox replay. Eight scripts are verbatim. Two carry redactions:
+and the Dalfox replay. Seven scripts are verbatim. Three carry redactions:
 
 - `01_extract_sqlmap_corpus.py`: the per-page injection-breakout templates
   (the prefix/comment each sqlmap payload is wrapped in) are replaced with
   `[breakout redacted]`; the query-structure comments and the mapping logic are
   kept.
+- `21_extract_dalfox_xss.py`: the per-page XSS injection-breakout templates (the
+  quote-escaping wrapper applied to each Dalfox JS payload) and the worked sample
+  payloads are replaced with `[breakout redacted]` / `[redacted for safety]`; the
+  extraction and mapping logic, the sink/context comments, and the counts are kept.
 - `22_routeA_dalfox_xss.py`: the browser-oracle smoke-test payload is replaced with
   `[smoke-test payload redacted]`.
 
