@@ -23,7 +23,7 @@ targets_and_pages:
   customapp_sqli: ["login", "search", "product", "filter"]
   customxss:      ["search", "calc"]
 
-seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   # 5 pages(SQLi)+2(XSS) x 10 seeds
+seeds: [1, 2, 3, 4, 5]                   # 4 pages(SQLi)+2(XSS) x 5 seeds = 30 runs; overrides common.yaml (10 seeds, RQ2/RQ3 only)
 
 validity_oracle:
   sqli: "observable security effect (auth bypass, unauthorized/full-table disclosure, protected-value recovery); response codes/errors alone insufficient"
