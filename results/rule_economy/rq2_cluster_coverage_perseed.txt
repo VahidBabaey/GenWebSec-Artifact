@@ -1,0 +1,98 @@
+# RQ2 #3 cluster-coverage @ eps=0.3, 10 seeds/page. Provenance for issues-v1 RQ2 #3.
+
+## SQLi  Login form   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1      30 300/300    2       0     30     0   100.0       100      6       18  
+  2      30 300/300    3       0     30     0   100.0       100     30       86  
+  3      32 300/300    1       0     32     0   100.0       100      1        1  
+  4      34 300/300    2       0     34     0   100.0       100     12       36  
+  5      35 300/300    2       0     35     0   100.0       100      1        3  
+  6      40 300/300    2       0     40     0   100.0       100      1        3  
+  7      36 300/300    2       0     36     0   100.0       100      4       10  
+  8      32 300/300    1       0     32     0   100.0       100      1        1  
+  9      21 300/300    2       0     21     0   100.0       100     19       57  
+  10     33 296/300    2       1     32     4    98.7       100     29       87  {'no_matching_rule': 50}
+  --> AGG(final-coverage view): K=32 [21-40]  full-cov clusters=32 [21-40]  failed(final)=0 [0-1]  final-uncovered=0 [0-4] (total 4)  payload-wtd cov=99.87±0.40
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=32 [21-40]  processed=4 [1-19]  effective-clusters(>=1 rule)=2 [1-2]  final|R|=2 [1-3]  failed-clusters(carried fwd)=3 [0-18]  attempts/proc-cluster=3 [1-3]  final-uncovered=0 [0-4] (total 4)
+  --> failure-cause tallies (reject events across residual iters): {'no_matching_rule': 50}
+
+## SQLi  Product search   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1      15 300/300    1       0     15     0   100.0       100      1        1  
+  2       7 299/300    1       1      6     1    99.7       100     11       31  {'no_matching_rule': 27}
+  3       9 300/300    1       0      9     0   100.0       100      1        1  
+  4      16 299/300    1       1     15     1    99.7       100     11       31  {'no_matching_rule': 26}
+  5      17 300/300    1       0     17     0   100.0       100      1        1  
+  6      10 300/300    1       0     10     0   100.0       100      1        1  
+  7       9 300/300    1       0      9     0   100.0       100      1        1  
+  8       7 300/300    1       0      7     0   100.0       100      1        1  
+  9      10 300/300    1       0     10     0   100.0       100      1        1  
+  10     13 300/300    1       0     13     0   100.0       100      1        1  
+  --> AGG(final-coverage view): K=10 [7-17]  full-cov clusters=10 [6-17]  failed(final)=0 [0-1]  final-uncovered=0 [0-1] (total 2)  payload-wtd cov=99.93±0.13
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=10 [7-17]  processed=1 [1-2]  effective-clusters(>=1 rule)=1 [1-1]  final|R|=1 [1-1]  failed-clusters(carried fwd)=0 [0-1]  attempts/proc-cluster=1 [1-2]  final-uncovered=0 [0-1] (total 2)
+  --> failure-cause tallies (reject events across residual iters): {'no_matching_rule': 53}
+
+## SQLi  URL parameter   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1      16 300/300    1       0     16     0   100.0       100      1        1  
+  2      11 300/300    1       0     11     0   100.0       100      1        1  
+  3       9 300/300    1       0      9     0   100.0       100      1        1  
+  4      10 300/300    1       0     10     0   100.0       100      1        1  
+  5      11 300/300    1       0     11     0   100.0       100      1        1  
+  6       6 300/300    1       0      6     0   100.0       100      1        1  
+  7      11 300/300    1       0     11     0   100.0       100      1        1  
+  8       7 300/300    1       0      7     0   100.0       100      1        1  
+  9       5 300/300    1       0      5     0   100.0       100      1        1  
+  10      7 300/300    1       0      7     0   100.0       100      1        1  
+  --> AGG(final-coverage view): K=10 [5-16]  full-cov clusters=10 [5-16]  failed(final)=0 [0-0]  final-uncovered=0 [0-0] (total 0)  payload-wtd cov=100.00±0.00
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=10 [5-16]  processed=1 [1-1]  effective-clusters(>=1 rule)=1 [1-1]  final|R|=1 [1-1]  failed-clusters(carried fwd)=0 [0-0]  attempts/proc-cluster=1 [1-1]  final-uncovered=0 [0-0] (total 0)
+
+## SQLi  Product filter   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1       5 300/300    1       0      5     0   100.0       100      1        1  
+  2       7 300/300    1       0      7     0   100.0       100      1        1  
+  3       6 300/300    1       0      6     0   100.0       100      1        1  
+  4       8 300/300    1       0      8     0   100.0       100      1        3  
+  5       5 300/300    1       0      5     0   100.0       100      1        1  
+  6       8 300/300    1       0      8     0   100.0       100      1        1  
+  7       7 300/300    2       0      7     0   100.0       100      1        2  
+  8       5 300/300    1       0      5     0   100.0       100      1        1  
+  9       5 300/300    1       0      5     0   100.0       100      1        1  
+  10      7 300/300    1       0      7     0   100.0       100      1        1  
+  --> AGG(final-coverage view): K=6 [5-8]  full-cov clusters=6 [5-8]  failed(final)=0 [0-0]  final-uncovered=0 [0-0] (total 0)  payload-wtd cov=100.00±0.00
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=6 [5-8]  processed=1 [1-1]  effective-clusters(>=1 rule)=1 [1-1]  final|R|=1 [1-2]  failed-clusters(carried fwd)=0 [0-0]  attempts/proc-cluster=1 [1-3]  final-uncovered=0 [0-0] (total 0)
+
+## XSS  Search (JS-string)   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1      14 299/300    2       1     13     1    99.7       100     10       30  {'no_matching_rule': 26}
+  2      10 298/300    2       1      9     2    99.3       100     10       30  {'no_matching_rule': 28}
+  3      19 298/300    1       1     18     2    99.3       100     10       30  {'no_matching_rule': 30}
+  4      19 299/300    1       1     18     1    99.7       100     10       30  {'no_matching_rule': 23}
+  5      10 300/300    1       0     10     0   100.0       100      1        1  
+  6      26 299/300    2       1     25     1    99.7       100     11       31  {'no_matching_rule': 24}
+  7      16 298/300    1       1     15     2    99.3       100     10       30  {'no_matching_rule': 32}
+  8      13 300/300    1       0     13     0   100.0       100      1        1  
+  9      22 299/300    1       1     21     1    99.7       100     10       30  {'no_matching_rule': 27}
+  10     20 299/300    1       1     19     1    99.7       100     10       30  {'no_matching_rule': 26}
+  --> AGG(final-coverage view): K=18 [10-26]  full-cov clusters=16 [9-25]  failed(final)=1 [0-1]  final-uncovered=1 [0-2] (total 11)  payload-wtd cov=99.63±0.23
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=18 [10-26]  processed=1 [1-2]  effective-clusters(>=1 rule)=1 [1-2]  final|R|=1 [1-2]  failed-clusters(carried fwd)=1 [0-1]  attempts/proc-cluster=3 [1-3]  final-uncovered=1 [0-2] (total 11)
+  --> failure-cause tallies (reject events across residual iters): {'no_matching_rule': 216}
+
+## XSS  Calculator (eval sink)   (10 seeds)
+  seed    K  blocked  |R| failedA  fullA uncov pw_cov% medClCov% procCl attempts causes
+  1      26 300/300    4       0     26     0   100.0       100      2        4  
+  2      30 300/300    3       0     30     0   100.0       100      1        1  
+  3      26 300/300    2       0     26     0   100.0       100      1        1  
+  4      30 300/300    5       0     30     0   100.0       100      2        4  
+  5      21 300/300    1       0     21     0   100.0       100      1        1  
+  6      26 300/300    1       0     26     0   100.0       100      1        1  
+  7      24 300/300    1       0     24     0   100.0       100      1        1  
+  8      23 300/300    5       0     23     0   100.0       100      2        4  
+  9      28 300/300    1       0     28     0   100.0       100      1        1  
+  10     23 300/300    3       0     23     0   100.0       100      3        6  
+  --> AGG(final-coverage view): K=26 [21-30]  full-cov clusters=26 [21-30]  failed(final)=0 [0-0]  final-uncovered=0 [0-0] (total 0)  payload-wtd cov=100.00±0.00
+  --> SEQ-VIEW (iter-0 partition, each cluster counted once): K=26 [21-30]  processed=1 [1-3]  effective-clusters(>=1 rule)=1 [1-3]  final|R|=2 [1-5]  failed-clusters(carried fwd)=0 [0-1]  attempts/proc-cluster=1 [1-2]  final-uncovered=0 [0-0] (total 0)
+
+
+===== RECONCILIATION =====
+  ALL RUNS RECONCILED (K matches cluster-stats; |residual| == 300-blocked; residual mapped to iter-0 clusters).

@@ -1,0 +1,8 @@
+scope,family,attacks_distinct,blocked_by_CRS429,still_bypassing,CRS429_block_rate_pct,persistence_pct
+bwapp (all),SQLi,3763,3562,201,94.66,5.34
+bwapp:login,SQLi,1957,1957,0,100.00,0.00
+bwapp:search,SQLi,1806,1605,201,88.87,11.13
+bwapp:xss_eval,XSS,1278,780,498,61.03,38.97
+juice (all),SQLi,4280,1416,2864,33.08,66.92
+juice:login,SQLi,1967,1416,551,71.99,28.01
+juice:search,SQLi,2313,0,2313,0.00,100.00

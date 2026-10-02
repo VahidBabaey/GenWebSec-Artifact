@@ -1,0 +1,2 @@
+scope,n_distinct,blocked_crs429,still_bypassing,block_rate_pct,persistence_pct,status_dist
+bwapp:xss_eval,1278,780,498,61.03,38.97,"{403: 780, 200: 498}"

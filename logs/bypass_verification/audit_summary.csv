@@ -1,0 +1,12 @@
+label,http_status,access_denied,crs_rules,custom_rules,n_msgs,request_line_redacted,sample_msgs
+benign_sqli_product,200,0,,,0,GET /customapp/product?<redacted> HTTP/1.1,
+benign_xss_calc,200,0,,,0,GET /customxss/calc.php?<redacted> HTTP/1.1,
+attack_sqli_crs,403,1,"942100,949110,980130",,6,GET /customapp/search?<redacted> HTTP/1.1,"Inbound Anomaly Score Exceeded (Total Inbound Score: 5 - SQLI=5,XSS=0,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 5, 0, 0, 0 | Inbound Anomaly Score Exceeded (Total Score: 5) | SQL Injection Attack Detected via libinjection"
+attack_xss_crs,403,1,"941100,941110,941160,949110,980130",,10,GET /customxss/search.php?<redacted> HTTP/1.1,"Inbound Anomaly Score Exceeded (Total Inbound Score: 15 - SQLI=0,XSS=15,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 15, 0, 0, 0 | Inbound Anomaly Score Exceeded (Total Score: 15) | NoScript XSS InjectionChecker: HTML Injection"
+attack_xss_eval_bypass,200,0,,,0,GET /customxss/calc.php?<redacted> HTTP/1.1,
+heldout_winner_1,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator
+heldout_winner_2,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator
+heldout_winner_3,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator
+heldout_winner_4,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator
+heldout_winner_5,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator
+heldout_winner_6,403,1,,1000001,2,GET /customapp/search?<redacted> HTTP/1.1,SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator

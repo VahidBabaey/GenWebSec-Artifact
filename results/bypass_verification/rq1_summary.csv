@@ -1,0 +1,9 @@
+family,page,page_label,records,backend_valid,bypass,bypass_confirmed_through_waf,pct_confirmed,bypass_http200,distinct_bypass
+SQLi,filter,Product filter,2505,2325,2316,2316,100.0000,2316,2291
+SQLi,login,Login form,2494,2184,2134,2134,100.0000,2134,2087
+SQLi,product,URL parameter,2500,2351,2337,2337,100.0000,2337,2329
+SQLi,search,Product search,2522,2397,2372,2372,100.0000,2372,2347
+XSS,calc,Calculator,2491,1728,1399,1399,100.0000,1399,1399
+XSS,search,Search (JS-string),2488,2008,1493,1493,100.0000,1493,1439
+SQLi,ALL,,10021,9257,9159,9159,100.0000,9159,9054
+XSS,ALL,,4979,3736,2892,2892,100.0000,2892,2838

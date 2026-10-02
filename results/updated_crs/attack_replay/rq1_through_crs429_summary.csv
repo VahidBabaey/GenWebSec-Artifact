@@ -1,0 +1,9 @@
+scope,n_requests,blocked_crs429,still_bypassing,errors_neg1,block_rate_pct,persistence_pct,distinct_payloads,distinct_blocked,distinct_block_rate_pct
+sqli (all),9159,9119,40,0,99.56,0.44,9054,9019,99.61
+sqli:filter,2316,2313,3,0,99.87,0.13,2291,2288,99.87
+sqli:login,2134,2102,32,0,98.50,1.50,2087,2060,98.71
+sqli:product,2337,2336,1,0,99.96,0.04,2329,2328,99.96
+sqli:search,2372,2368,4,0,99.83,0.17,2347,2343,99.83
+xss (all),2892,2448,444,0,84.65,15.35,2838,2394,84.36
+xss:calc,1399,955,444,0,68.26,31.74,1399,955,68.26
+xss:search,1493,1493,0,0,100.00,0.00,1439,1439,100.00

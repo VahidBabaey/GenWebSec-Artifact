@@ -1,0 +1,3 @@
+technique,n_defense_seeds,eligible,median_blocked,blocked_range,median_rate,worst_rate,worst_cp95_lo,median_cp95
+CG-Adaptive,10,45,42,42-45,93.33,93.33,81.73,"[81.73,98.60]"
+CG-Static,10,45,42,42-45,93.33,93.33,81.73,"[81.73,98.60]"

@@ -1,0 +1,23 @@
+==============================================================================
+R1.1 RQ3 HELD-OUT REPLAY — two-stage bypass-criterion re-verification
+==============================================================================
+
+[SQLi] full-funnel two-stage replay — 80 runs
+  runs per (strategy,page): {('CG', 'login'): 10, ('CG', 'search'): 10, ('CG', 'product'): 10, ('CG', 'filter'): 10, ('PP', 'login'): 10, ('PP', 'search'): 10, ('PP', 'product'): 10, ('PP', 'filter'): 10}
+  UNFAITHFUL runs (replay funnel != logged funnel): 0
+  residual bypasses (reported, 403-only):            207
+  residuals re-confirmed as real exploits (2-stage): 207
+  FALSE bypasses (not-403 but NOT a real exploit):   0
+  runs where verified block%% != reported block%%:    0
+
+[XSS] valid+bypassed scope — 40 runs
+  runs per (strategy,page): {('CG', 'calc'): 10, ('CG', 'search'): 10, ('PP', 'calc'): 10, ('PP', 'search'): 10}
+  runs whose replayed funnel != logged funnel: 1
+     PP calc seed 1 log cb/blk/res=62/62/0 rep=63/63/0
+  valid held-out attacks (log):                      5392
+  of those re-confirmed executing on the backend:    5392
+  residual bypasses (reported, 403-only):            0
+  residuals re-confirmed as real exploits (browser): 0
+  FALSE bypasses (not-403 but NOT a real exploit):   0
+
+==============================================================================

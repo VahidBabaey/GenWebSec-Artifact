@@ -1,0 +1,7 @@
+scope,n_distinct,blocked_crs429,still_bypassing,block_rate_pct,persistence_pct,status_dist
+bwapp (all),3763,3562,201,94.66,5.34,"{403: 3562, 404: 201}"
+bwapp:login,1957,1957,0,100.00,0.00,{403: 1957}
+bwapp:search,1806,1605,201,88.87,11.13,"{403: 1605, 404: 201}"
+juice (all),4280,1416,2864,33.08,66.92,"{403: 1416, 404: 2864}"
+juice:login,1967,1416,551,71.99,28.01,"{403: 1416, 404: 551}"
+juice:search,2313,0,2313,0.00,100.00,{404: 2313}

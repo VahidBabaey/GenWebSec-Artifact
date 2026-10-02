@@ -1,0 +1,9 @@
+benign_corpus,n,false_positives_403,fp_rate_pct
+customapp (SQLi contexts),2000,0,0.00
+customxss (XSS contexts),2000,0,0.00
+bwapp_login,1000,0,0.000
+bwapp_search,1000,0,0.000
+bwapp_calc,2000,0,0.000
+juice_login,1000,0,0.000
+juice_search,1000,0,0.000
+csic,8363,6,0.072

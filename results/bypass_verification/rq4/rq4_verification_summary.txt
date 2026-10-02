@@ -1,0 +1,16 @@
+==============================================================================
+R1.1 RQ4 HELD-OUT FROZEN-REPLAY — two-stage re-verification of residual bypasses (eps0.3)
+==============================================================================
+
+[SQLi]  (36 ruleset-groups across targets/pages)
+  bwapp      reported_bypasses= 10453  reprobe_not403= 10453  real_exploit= 10453  FALSE_BYPASS=  0  reclassified_now403=  0
+  customapp  reported_bypasses=    62  reprobe_not403=    62  real_exploit=    62  FALSE_BYPASS=  0  reclassified_now403=  0
+  juice      reported_bypasses=  2652  reprobe_not403=  2652  real_exploit=  2652  FALSE_BYPASS=  0  reclassified_now403=  0
+
+[XSS]  (52 ruleset-groups across targets/pages)
+  bwapp      reported_bypasses=   609  reprobe_not403=   609  real_exploit=   609  FALSE_BYPASS=  0  reclassified_now403=  0
+  customxss  reported_bypasses=  2464  reprobe_not403=  2464  real_exploit=  2464  FALSE_BYPASS=  0  reclassified_now403=  0
+
+------------------------------------------------------------------------------
+GRAND TOTAL  residual bypasses re-probed=16240  re-confirmed real exploits=16240  FALSE BYPASSES=0  reclassified=0
+==============================================================================

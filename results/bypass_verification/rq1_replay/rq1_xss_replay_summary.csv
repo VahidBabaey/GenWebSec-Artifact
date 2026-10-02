@@ -1,0 +1,11 @@
+page,seed,n_winners,backend_exec_confirmed,bypass_not403,exploit_through_waf,false_bypass
+calc,1,262,262,262,262,0
+calc,2,249,249,249,249,0
+calc,3,293,293,293,293,0
+calc,4,326,326,326,326,0
+calc,5,269,269,269,269,0
+search,1,289,289,289,289,0
+search,2,261,261,261,261,0
+search,3,304,304,304,304,0
+search,4,314,314,314,314,0
+search,5,325,325,325,325,0

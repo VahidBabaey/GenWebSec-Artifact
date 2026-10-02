@@ -1,0 +1,9 @@
+context,attacks_observed_bypassed_CRS332,blocked_by_CRS429,still_bypassing_CRS429,CRS429_block_rate_pct,persistence_pct
+SQLi (customapp),9159,9119,40,99.56,0.44
+XSS (customxss),2892,2448,444,84.65,15.35
+  sqli:login,2134,2102,32,98.50,1.50
+  sqli:search,2372,2368,4,99.83,0.17
+  sqli:product,2337,2336,1,99.96,0.04
+  sqli:filter,2316,2313,3,99.87,0.13
+  xss:search,1493,1493,0,100.00,0.00
+  xss:calc,1399,955,444,68.26,31.74

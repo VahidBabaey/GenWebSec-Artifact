@@ -1,0 +1,11 @@
+strategy,family,coverage_recheck_in_round,rules_per_file_median,distinct_over_total,transform_chains_observed
+PP-Static,SQLi,no,186,5294/6964,"urlDecodeUni,lowercase | urlDecodeUni,replaceComments,compressWhitespace,lowercase"
+PP-Static,XSS,no,293,3428/5865,"urlDecodeUni,htmlEntityDecode,jsDecode,compressWhitespace"
+CG-Static,SQLi,yes,1,50/50,"urlDecodeUni,replaceComments,compressWhitespace,lowercase"
+CG-Static,XSS,yes,1,39/39,"urlDecodeUni,htmlEntityDecode,jsDecode,compressWhitespace"
+RG,SQLi,yes,1,54/55,"urlDecodeUni,replaceComments,compressWhitespace,lowercase"
+RG,XSS,yes,2,39/39,"urlDecodeUni,htmlEntityDecode,jsDecode,compressWhitespace"
+CG-Adaptive,SQLi,yes,1,57/57,"urlDecodeUni,replaceComments,compressWhitespace,lowercase"
+CG-Adaptive,XSS,yes,2,39/39,"urlDecodeUni,htmlEntityDecode,jsDecode,compressWhitespace"
+PP-Adaptive,SQLi,no,25,846/928,"urlDecodeUni,replaceComments,compressWhitespace,lowercase"
+PP-Adaptive,XSS,no,8,179/204,"urlDecodeUni,htmlEntityDecode,jsDecode,compressWhitespace"

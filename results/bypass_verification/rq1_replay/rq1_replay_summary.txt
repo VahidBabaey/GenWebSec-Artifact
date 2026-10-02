@@ -1,0 +1,6 @@
+==========================================================================
+R1.1 RQ1 APP RE-REPLAY — independent re-verification of every RQ1 bypass
+==========================================================================
+[SQLi] runs=20  winners=9159  bypass(not403)=9159  exploit_through_waf=9159  FALSE_BYPASS=0
+[XSS] runs=10  winners=2892  bypass(not403)=2892  exploit_through_waf=2892  FALSE_BYPASS=0
+==========================================================================

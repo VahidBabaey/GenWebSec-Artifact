@@ -1,0 +1,128 @@
+===== benign_sqli_product  HTTP 200 =====
+Apache-Handler: proxy-server
+Stopwatch: 1790886612015687 2078 (- - -)
+Stopwatch2: 1790886612015687 2078; combined=868, p1=336, p2=331, p3=19, p4=137, p5=45, sr=43, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== benign_xss_calc  HTTP 200 =====
+Apache-Handler: proxy-server
+Stopwatch: 1790886612018058 996 (- - -)
+Stopwatch2: 1790886612018058 996; combined=569, p1=198, p2=247, p3=18, p4=70, p5=36, sr=26, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== attack_sqli_crs  HTTP 403 =====
+Message: Warning. detected SQLi using libinjection with fingerprint 's&sos' [file "/usr/share/modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "65"] [id "942100"] [msg "SQL Injection Attack Detected via libinjection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/248/66"] [tag "PCI/6.5.2"]
+Message: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:anomaly_score. [file "/usr/share/modsecurity-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "93"] [id "949110"] [msg "Inbound Anomaly Score Exceeded (Total Score: 5)"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-generic"]
+Message: Warning. Operator GE matched 5 at TX:inbound_anomaly_score. [file "/usr/share/modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf"] [line "91"] [id "980130"] [msg "Inbound Anomaly Score Exceeded (Total Inbound Score: 5 - SQLI=5,XSS=0,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 5, 0, 0, 0"] [ver "OWASP_CRS/3.3.2"] [tag "event-correlation"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. detected SQLi using libinjection with fingerprint 's&sos' [file "/usr/share/modsecurity-crs/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "65"] [id "942100"] [msg "SQL Injection Attack Detected via libinjection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/248/66"] [tag "PCI/6.5.2"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWEwAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:anomaly_score. [file "/usr/share/modsecurity-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "93"] [id "949110"] [msg "Inbound Anomaly Score Exceeded (Total Score: 5)"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-generic"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWEwAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 5 at TX:inbound_anomaly_score. [file "/usr/share/modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf"] [line "91"] [id "980130"] [msg "Inbound Anomaly Score Exceeded (Total Inbound Score: 5 - SQLI=5,XSS=0,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 5, 0, 0, 0"] [ver "OWASP_CRS/3.3.2"] [tag "event-correlation"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWEwAAAAQ"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612019389 519 (- - -)
+Stopwatch2: 1790886612019389 519; combined=420, p1=125, p2=247, p3=0, p4=0, p5=48, sr=20, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== attack_xss_crs  HTTP 403 =====
+Message: Warning. detected XSS using libinjection. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "55"] [id "941100"] [msg "XSS Attack Detected via libinjection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"]
+Message: Warning. Pattern match "(?i)<script[^>]*>[\\s\\S]*?" at ARGS:q. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "82"] [id "941110"] [msg "XSS Filter - Category 1: Script Tag Vector"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"]
+Message: Warning. Pattern match "(?i:(?:<\\w[\\s\\S]*[\\s\\/]|['\"](?:[\\s\\S]*[\\s\\/])?)(?:on(?:d(?:e(?:vice(?:(?:orienta|mo)tion|proximity|found|light)|livery(?:success|error)|activate)|r(?:ag(?:e(?:n(?:ter|d)|xit)|(?:gestur|leav)e|start|drop|over)|op)|i(?:s(?:c(?:hargingtimechange ..." at ARGS:q. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "199"] [id "941160"] [msg "NoScript XSS InjectionChecker: HTML Injection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"]
+Message: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:anomaly_score. [file "/usr/share/modsecurity-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "93"] [id "949110"] [msg "Inbound Anomaly Score Exceeded (Total Score: 15)"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-generic"]
+Message: Warning. Operator GE matched 5 at TX:inbound_anomaly_score. [file "/usr/share/modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf"] [line "91"] [id "980130"] [msg "Inbound Anomaly Score Exceeded (Total Inbound Score: 15 - SQLI=0,XSS=15,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 15, 0, 0, 0"] [ver "OWASP_CRS/3.3.2"] [tag "event-correlation"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. detected XSS using libinjection. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "55"] [id "941100"] [msg "XSS Attack Detected via libinjection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFAAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. Pattern match "(?i)<script[^>]*>[\\\\\\\\s\\\\\\\\S]*?" at ARGS:q. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "82"] [id "941110"] [msg "XSS Filter - Category 1: Script Tag Vector"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFAAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. Pattern match "(?i:(?:<\\\\\\\\w[\\\\\\\\s\\\\\\\\S]*[\\\\\\\\s\\\\\\\\/]|['\\\\"](?:[\\\\\\\\s\\\\\\\\S]*[\\\\\\\\s\\\\\\\\/])?)(?:on(?:d(?:e(?:vice(?:(?:orienta|mo)tion|proximity|found|light)|livery(?:success|error)|activate)|r(?:ag(?:e(?:n(?:ter|d)|xit)|(?:gestur|leav)e|start|drop|over)|op)|i(?:s(?:c(?:hargingtimechange ..." at ARGS:q. [file "/usr/share/modsecurity-crs/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "199"] [id "941160"] [msg "NoScript XSS InjectionChecker: HTML Injection"] [data "<redacted>"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "capec/1000/152/242"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFAAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Operator GE matched 5 at TX:anomaly_score. [file "/usr/share/modsecurity-crs/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "93"] [id "949110"] [msg "Inbound Anomaly Score Exceeded (Total Score: 15)"] [severity "CRITICAL"] [ver "OWASP_CRS/3.3.2"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-generic"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFAAAAAQ"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Warning. Operator GE matched 5 at TX:inbound_anomaly_score. [file "/usr/share/modsecurity-crs/rules/RESPONSE-980-CORRELATION.conf"] [line "91"] [id "980130"] [msg "Inbound Anomaly Score Exceeded (Total Inbound Score: 15 - SQLI=0,XSS=15,RFI=0,LFI=0,RCE=0,PHPI=0,HTTP=0,SESS=0): individual paranoia level scores: 15, 0, 0, 0"] [ver "OWASP_CRS/3.3.2"] [tag "event-correlation"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFAAAAAQ"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612020276 499 (- - -)
+Stopwatch2: 1790886612020276 499; combined=404, p1=109, p2=246, p3=0, p4=0, p5=49, sr=17, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== attack_xss_eval_bypass  HTTP 200 =====
+Apache-Handler: proxy-server
+Stopwatch: 1790886612021169 651 (- - -)
+Stopwatch2: 1790886612021169 651; combined=398, p1=108, p2=178, p3=14, p4=55, p5=43, sr=17, sw=0, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_1  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1CUETdm_hBssncpWFgAAAAQ"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612022144 1114 (- - -)
+Stopwatch2: 1790886612022144 1114; combined=903, p1=111, p2=755, p3=0, p4=0, p5=37, sr=18, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_2  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1KG47elVjB45-v9_9gAAAAI"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612023694 827 (- - -)
+Stopwatch2: 1790886612023694 827; combined=536, p1=218, p2=280, p3=0, p4=0, p5=38, sr=32, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_3  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1KG47elVjB45-v9_9wAAAAI"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612024877 433 (- - -)
+Stopwatch2: 1790886612024877 433; combined=334, p1=110, p2=189, p3=0, p4=0, p5=35, sr=18, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_4  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1KG47elVjB45-v9_-AAAAAI"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612025633 402 (- - -)
+Stopwatch2: 1790886612025633 402; combined=310, p1=108, p2=166, p3=0, p4=0, p5=36, sr=18, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_5  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1KG47elVjB45-v9_-QAAAAI"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612026472 408 (- - -)
+Stopwatch2: 1790886612026472 408; combined=313, p1=110, p2=169, p3=0, p4=0, p5=34, sr=19, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+
+===== heldout_winner_6  HTTP 403 =====
+Message: Access denied with code 403 (phase 2). Pattern match "(?:'|\\d)(?:--|#|;|/\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"]
+Apache-Error: [file "apache2_util.c"] [line 271] [level 3] [client 127.0.0.1] ModSecurity: Access denied with code 403 (phase 2). Pattern match "(?:'|\\\\\\\\d)(?:--|#|;|/\\\\\\\\*)" at ARGS:q. [file "/etc/modsecurity/custom/sft_rule.conf"] [line "9"] [id "1000001"] [msg "SQL Injection COMMENT-BREAKOUT detected: quote or number followed immediately by comment or terminator"] [hostname "localhost"] [uri "<redacted>"] [unique_id "ar7C1KG47elVjB45-v9_-gAAAAI"]
+Action: Intercepted (phase 2)
+Apache-Handler: proxy-server
+Stopwatch: 1790886612027196 412 (- - -)
+Stopwatch2: 1790886612027196 412; combined=317, p1=110, p2=171, p3=0, p4=0, p5=36, sr=19, sw=0, l=0, gc=0
+Producer: ModSecurity for Apache/2.9.5 (http://www.modsecurity.org/); OWASP_CRS/3.3.2.
+Server: Apache/2.4.52 (Ubuntu)
+Engine-Mode: "ENABLED"
+

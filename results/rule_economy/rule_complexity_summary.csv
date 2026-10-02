@@ -1,0 +1,11 @@
+strategy,family,n_runs_x_context,rules_per_file_median,rules_per_file_range,distinct_over_total,med_regex_len_median,med_regex_len_range,sum_regex_len_median
+PP-Static,SQLi,40,186,83-230,5294/6964,136,110-172,29309
+PP-Static,XSS,20,293,285-300,3428/5865,347,340-350,102330
+CG-Static,SQLi,40,1,1-3,50/50,57,13-66,57
+CG-Static,XSS,20,1,1-5,39/39,309,33-388,356
+RG,SQLi,40,1,1-3,54/55,65,19-70,66
+RG,XSS,20,2,1-3,39/39,166,69-364,341
+CG-Adaptive,SQLi,40,1,1-3,57/57,57,13-66,57
+CG-Adaptive,XSS,20,2,1-4,39/39,214,87-371,429
+PP-Adaptive,SQLi,40,25,4-40,846/928,120,109-165,3330
+PP-Adaptive,XSS,20,8,3-18,179/204,364,332-393,3132

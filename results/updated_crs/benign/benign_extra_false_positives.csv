@@ -1,0 +1,7 @@
+corpus,method,path,query_or_body
+csic,POST,/tienda1/publico/anadir.jsp,cantidad=1&id=1&nombre=Jam%F3n+Ib%E9rico&precio=100&B1=A%F1adir+al+carrito
+csic,POST,/tienda1/publico/registro.jsp,modo=registro&login=miguel&password=miguel&nombre=Miguel&apellidos=Lopez+Fern%E1ndez&email=mi1980%40hotmail.com&dni=72763476M&direccion=Serrano%2C+120%2C+1%BA+esc.2+dcha&ciudad=Madrid&provincia=31&cp=28006&ntc=7659872345782345&B1=Registrar
+csic,POST,/tienda1/publico/anadir.jsp,cantidad=2&id=1&nombre=Jam%F3n+Ib%E9rico&precio=100&B1=A%F1adir+al+carrito
+csic,POST,/tienda1/publico/anadir.jsp,cantidad=2&id=1&nombre=Jam%F3n+Ib%E9rico&precio=100&B1=A%F1adir+al+carrito
+csic,POST,/tienda1/publico/anadir.jsp,cantidad=1&id=1&nombre=Jam%F3n+Ib%E9rico&precio=100&B1=A%F1adir+al+carrito
+csic,POST,/tienda1/miembros/editar.jsp,modo=insertar&login=miguel&password=miguel&nombre=Miguel+Jos%E9&apellidos=Lopez+Fern%E1ndez&email=mi1980%40hotmail.com&dni=72763476M&direccion=Serrano%2C+120%2C+1%BA+esc.2+dcha&ciudad=Madrid&provincia=31&cp=28006&ntc=7659872345782345&B1=Confirmar

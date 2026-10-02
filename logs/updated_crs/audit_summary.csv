@@ -1,0 +1,9 @@
+family,label,endpoint,status,matched_rule_ids,inbound_anomaly_score,inspected_fields
+sqli,canonical-attack,product,403,942100;949110;980170,5,"ARGS:id:,TX:blocking_inbound_anomaly_score."
+sqli,real-attack-blocked,search,403,942151;942230;949110;980170,10,"ARGS:q.,ARGS:q:,TX:blocking_inbound_anomaly_score."
+sqli,real-attack-still-bypassing,login,200,,,
+sqli,benign,product,200,,,
+xss,canonical-attack,search.php,403,941100;941110;941160;941390;949110;980170,20,"ARGS:q.,ARGS:q:,TX:blocking_inbound_anomaly_score."
+xss,real-attack-blocked,search.php,403,920540;942540;949110;980170,10,"ARGS:q.,ARGS:q:,TX:blocking_inbound_anomaly_score."
+xss,real-attack-still-bypassing,calc.php,200,,,
+xss,benign,search.php,200,,,
