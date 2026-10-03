@@ -1,0 +1,6 @@
+round,generated,validated_step1,waf_bypass_non403_step2,false_bypass,confirmed_3step,new_distinct,cumulative_distinct_confirmed
+0,49,44,30,0,30,30,30
+1,50,44,35,0,35,35,65
+2,49,44,42,0,42,42,107
+3,50,41,41,0,41,41,148
+4,50,45,45,0,45,45,193

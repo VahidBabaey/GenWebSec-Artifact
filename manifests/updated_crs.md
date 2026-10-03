@@ -34,6 +34,22 @@ passed) and `audit_sample_redacted.jsonl` (representative JSON audit records; pa
 ## Generating scripts
 `scripts/updated_crs/` -- deploy, replay, benign, audit, metadata, and report drivers (`r13_*.py`).
 
+## Direct generation against CRS 4.29.0 (attack agent vs the latest ruleset)
+`results/updated_crs/direct_generation/`
+A complement to the replay: the co-evolutionary attack agent is pointed directly at CRS 4.29.0 and, from a
+single confirmed seed per context, generates new re-confirmed bypasses round by round. Five rounds of about
+50 candidates; three-step check (backend-valid; non-403 through the WAF; exploit re-confirmed on the WAF
+response). Distinct three-step-confirmed bypasses: custom-app SQLi 170, Juice SQLi 149, custom-XSS calc 193,
+bWAPP xss_eval 189; zero false bypasses; canonical attacks blocked (403). Supports the "even the latest CRS
+is bypassable" strand of reviewer comment R1.3.
+- `direct_generation/{customapp_login,juice_login,customxss_calc,bwapp_xss_eval}_rounds.csv` -- per-round
+  funnel counts; `direct_generation/_SUMMARY_attack429.csv` -- consolidated; `direct_generation/README.md`.
+- Drivers: `scripts/updated_crs/r_attack429_newprompts_sqli.py`, `r_attack429_newprompts_xss.py`, aggregator
+  `r13_crs429_attack_summary.py`.
+- WITHHELD (dual-use): the four CRS-4.29 attack-prompt modules (`*_crs429.py`) and the raw confirmed-bypass
+  lists (`*_confirmed_bypasses_PRIVATE.txt`); hashes recorded in `manifests/provenance_checksums.csv`, per
+  the `prompts/attack/` policy. Only counts and drivers are released.
+
 ## Notes
 - The updated CRS runs in a container (OWASP CRS 4.29.0, ModSecurity 2.9.15, Apache 2.4.68) beside the
   unchanged study host (Apache 2.4.52 + ModSecurity 2.9.5 + CRS 3.3.2), at matched configuration

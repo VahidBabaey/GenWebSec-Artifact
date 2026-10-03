@@ -1,0 +1,5 @@
+target,family,page,round0_new,round1_new,round2_new,round3_new,round4_new,cumulative_confirmed,total_generated,total_validated,total_waf_bypass_non403,total_confirmed_3step,total_false_bypass
+Custom app,SQLi,login,29,25,37,35,44,170,250,221,170,170,0
+OWASP Juice Shop,SQLi,login,17,31,34,35,32,149,248,245,149,149,0
+Custom XSS app,XSS,calc (eval sink),30,35,42,41,45,193,248,218,193,193,0
+bWAPP,XSS,xss_eval (eval sink),38,33,39,33,46,189,247,206,197,197,0

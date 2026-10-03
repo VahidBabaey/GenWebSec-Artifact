@@ -54,3 +54,12 @@ RQ4 held-out attacks (bwApp, Juice; valid + CRS-3.3.2-bypassing) under CRS 4.29.
 ## Reproduce
 Deploy: `r13_deploy.py` (in ~/); replay: `r13_run_attacks.py`, `r13_run_benign.py`, `r13_run_benign_extra.py`,
 `r13_run_rq4_bwapp_juice.py`; audit: `r13_capture_audit.py`; metadata: `r13_metadata.py`; this report: `r13_build_report.py`.
+
+## Direct generation against CRS 4.29.0 (complement)
+The replay above measures how much of the CRS-3.3.2-bypassing surface survives the latest CRS. A separate
+strand points the attack agent directly at CRS 4.29.0 and shows it still generates new, re-confirmed
+bypasses from a single seed, round by round (170 custom-app SQLi, 149 Juice SQLi, 193 custom-XSS calc,
+189 bWAPP xss_eval; zero false bypasses under the three-step check). See `direct_generation/` for the
+per-round counts and `direct_generation/README.md` for setup and provenance. The CRS-4.29 attack-prompt
+modules are withheld (hashes in `manifests/provenance_checksums.csv`); the drivers are in
+`scripts/updated_crs/`.

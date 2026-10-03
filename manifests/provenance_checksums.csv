@@ -12,3 +12,11 @@ third-party benign after preprocessing (not redistributed),csic_normal_crs_basel
 "third-party source dataset (raw, not redistributed)",SQLi.csv,19442734,aa54b6b4ab8c68d40354d06e078baac696e333f120e0259146ae0b101dbe17fc
 "third-party source dataset (raw, not redistributed)",XSS.csv,7751573,576b0f37650830f542b6d441724a672a6d2ba9463a5c99524e8ae1f416f73cd6
 "third-party source dataset (raw, not redistributed)",allsample.csv,39675778,22e27264c43d18adc6fbb643158815dfea8e35dc83db7daeedf918ada7cba72d
+CRS-4.29 attack-prompt module (withheld),customapp_attack_prompts_crs429.py,14165,eb55473d06a4ca09ba6a056cac63faf5d410f1080c3d04ab85e1eb791064d43d
+CRS-4.29 attack-prompt module (withheld),juice_login_bypass_prompts_crs429.py,6658,602de09516db2879ea39c878ec3adb7451dd693911efc6c48f9bd636c24aa88c
+CRS-4.29 attack-prompt module (withheld),xss_customapp_attack_prompts_crs429.py,8188,396fd84e7c410266f23bbd1ec428a130c61ef332ed8a565331548379a1e92bb6
+CRS-4.29 attack-prompt module (withheld),xss_bwapp_attack_prompts_crs429.py,8320,46c69a8b9cd5af2754982364f82bb893e49e850d226f51c959e287a0441d05a3
+CRS-4.29 confirmed-bypass corpus (withheld),customapp_login_confirmed_bypasses_PRIVATE.txt,6398,f2907ff9feedf7c7433cf3c3a20c3e972892ab7624c940409203d75b6cacda06
+CRS-4.29 confirmed-bypass corpus (withheld),juice_login_confirmed_bypasses_PRIVATE.txt,6568,e154b6dfd8e4297351773d2501e2ad956062a4fdb7d246d8c5622bf3255f6c6f
+CRS-4.29 confirmed-bypass corpus (withheld),customxss_calc_confirmed_bypasses_PRIVATE.txt,12418,912ae4aae90baf2b045aaedd25ef868741c613d0ea4c226565af7deca42a277f
+CRS-4.29 confirmed-bypass corpus (withheld),bwapp_xss_eval_confirmed_bypasses_PRIVATE.txt,15122,64c55df02bd153030f28849236615233891c5a21a01e50f6801875ae46e36d5b

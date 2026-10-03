@@ -3,7 +3,7 @@
 ## `SHA256SUMS` (every released file)
 
 `SHA256SUMS` at the repository root lists a SHA-256 hash for every released file
-(209 files), in the standard `<hash>  <path>` format. Verify the whole artifact
+(330 files), in the standard `<hash>  <path>` format. Verify the whole artifact
 from the repository root with:
 
 ```
@@ -17,8 +17,8 @@ released here:
 | --- | --- |
 | benign corpora | `data/benign/` (7 files) |
 | final per-seed rulesets | `rules/final_rulesets/` (40 files) |
-| experiment configuration files | `configs/` (15 files) |
-| released result tables | `results/` (66 files) |
+| experiment configuration files | `configs/` (16 files) |
+| released result tables | `results/` (121 files) |
 
 Regenerating `SHA256SUMS` after any change and re-running the check is how a
 reviewer confirms a repository copy matches the artifact used in the paper. The file
@@ -28,14 +28,17 @@ excludes only itself.
 
 Two categories the specification asks to checksum are inputs we do not redistribute:
 the fixed bypass corpora (attack data) and the external attack datasets after
-preprocessing (they contain payloads). Their SHA-256 hashes are still recorded (13
-entries), so a reviewer who reconstructs those inputs can confirm they match the
-versions we used, without the payloads themselves being released.
+preprocessing (they contain payloads). Their SHA-256 hashes are still recorded (21
+entries, including the Frontiers-revision withheld inputs), so a reviewer who
+reconstructs those inputs can confirm they match the versions we used, without the
+payloads themselves being released.
 
 | Category | Files |
 | --- | --- |
 | fixed bypass corpora (withheld) | the six pooled winner sets the per-seed 300-attack samples are drawn from |
 | external attack datasets after preprocessing (withheld) | the deduplicated, page-instantiated candidate corpora that feed the non-LLM funnel: `sqlmap_candidates.tsv`, `csic_candidates.tsv`, `dalfox_candidates.tsv` |
+| CRS-4.29 attack-prompt modules (withheld) | the four Frontiers-revision prompt modules (`*_crs429.py`) used for direct generation against CRS 4.29.0 |
+| CRS-4.29 confirmed-bypass corpora (withheld) | the four raw confirmed-bypass lists (`*_confirmed_bypasses_PRIVATE.txt`) from that experiment |
 | third-party benign after preprocessing (not redistributed) | CSIC normal replayed through baseline CRS (`csic_normal_crs_baseline.csv`, 8,363) |
 | third-party source datasets (raw, not redistributed) | the Torpeda CSIC 2012 partitions (`SQLi.csv`, `XSS.csv`, `allsample.csv`) |
 
