@@ -3,7 +3,7 @@
 ## `SHA256SUMS` (every released file)
 
 `SHA256SUMS` at the repository root lists a SHA-256 hash for every released file
-(335 files), in the standard `<hash>  <path>` format. Verify the whole artifact
+(346 files), in the standard `<hash>  <path>` format. Verify the whole artifact
 from the repository root with:
 
 ```
@@ -18,7 +18,7 @@ released here:
 | benign corpora | `data/benign/` (7 files) |
 | final per-seed rulesets | `rules/final_rulesets/` (40 files) |
 | experiment configuration files | `configs/` (16 files) |
-| released result tables | `results/` (125 files) |
+| released result tables | `results/` (135 files) |
 
 Regenerating `SHA256SUMS` after any change and re-running the check is how a
 reviewer confirms a repository copy matches the artifact used in the paper. The file

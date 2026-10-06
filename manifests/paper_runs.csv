@@ -12,3 +12,4 @@ tab:rq4-eps-summary,appendix,RQ4 aggregate block rates over the epsilon sweep,ru
 tab:fp-incidents,appendix,external false-positive incidents (frozen-rule benign replay),results/rq4_fp/,
 tab:rq3-trace,appendix,representative CG-Adaptive Login round-by-round trace,run_manifests: run_id=RQ3_SQLi_CG-Adaptive_login_eps0.3_seed7,1
 tab:nonllm,appendix,non-LLM validation funnel and Dalfox replay,results/nonllm/ (non-LLM sources + frozen rules),
+R2.5-benign-diversity,revision,benign-diversity FP supplement (nested JSON + rich text) added for R2.5,results/benign_diversity/ (benign corpora + frozen-rule replay),
