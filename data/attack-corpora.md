@@ -6,9 +6,10 @@ withholding of the attack-agent prompts (`prompts/attack/`) and with the paper's
 ethics statement.
 
 What is released instead are the **derived quantities**: per-context and per-seed
-counts, validity and CRS-bypass outcomes, block rates, and aggregate statistics.
-These live under `results/` and are enough to reconstruct every attack-related
-number in the paper.
+counts, validity and CRS-bypass outcomes, block rates, aggregate statistics, and an
+opaque per-payload SHA-1 identifier (`payload_sha1`) that keys the per-request outcome
+files without exposing the payload. These live under `results/` and are enough to
+reconstruct every attack-related number in the paper.
 
 ## Attack sources in the study
 
@@ -43,10 +44,16 @@ number is documented in `results/` by its metadata rather than its payloads:
 - **Torpeda CSIC 2012** payloads are obtained from the third-party source; see
   `third-party/csic-torpeda-2012.md` for retrieval, checksums, and counts.
 
-## Why not release hashes of the payloads
+## Per-payload identifiers (SHA-1 hashes)
 
-Hashes of individual bypass payloads were considered. They are omitted because they
-add no reproduction value here (the payloads cannot be reconstructed from hashes,
-and the funnel counts already establish the results) while still cataloguing the
-attack surface at payload granularity. If a future controlled-access arrangement
-is set up for peer review, that is the appropriate channel for payload-level data.
+The per-request and per-attack outcome files under `results/` identify each payload by a
+SHA-1 hash in a `payload_sha1` column, not by the payload text. The hash is a stable, opaque
+row key: it lets a reader correlate the same payload across configurations, seeds, and CRS
+versions, and tell whether two rows refer to the same input, without exposing the payload.
+The full payload cannot be reconstructed from the hash. The bypass-verification outcome files
+(`results/bypass_verification/`) use a 16-hex truncation of the SHA-1; the non-LLM outcome files
+(`results/nonllm/`) carry the full 40-hex SHA-1, so the identifiers are comparable within each
+family of files but not across the two.
+
+Raw payloads themselves remain withheld, as described above. If a future controlled-access
+arrangement is set up for peer review, that is the appropriate channel for payload-level data.

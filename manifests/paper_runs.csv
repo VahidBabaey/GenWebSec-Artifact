@@ -13,3 +13,4 @@ tab:fp-incidents,appendix,external false-positive incidents (frozen-rule benign 
 tab:rq3-trace,appendix,representative CG-Adaptive Login round-by-round trace,run_manifests: run_id=RQ3_SQLi_CG-Adaptive_login_eps0.3_seed7,1
 tab:nonllm,appendix,non-LLM validation funnel and Dalfox replay,results/nonllm/ (non-LLM sources + frozen rules),
 R2.5-benign-diversity,revision,benign-diversity FP supplement (nested JSON + rich text) added for R2.5,results/benign_diversity/ (benign corpora + frozen-rule replay),
+tab:r23-pl2,revision,PL2 robustness: held-out block rate and benign FP at paranoia level 2 (R2.3),results/pl2/ (frozen-rule replay at PL2; see manifests/pl2.md),

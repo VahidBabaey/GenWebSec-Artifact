@@ -10,6 +10,13 @@ manifests/
 ├── run_manifests.csv          one row per reported run (identity + provenance)
 ├── paper_runs.csv             top-level map: each submitted-paper table -> its backing runs
 ├── provenance_checksums.csv   checksums of the withheld and third-party inputs
+├── bypass_verification.md     R1.1: two-stage bypass criterion -> per-request outcome files
+├── updated_crs.md             R1.3: persistence under OWASP CRS 4.29.0
+├── rule_economy.md            R1.5: rule-count and clustering economy
+├── denominators.md            R1.6: held-out denominators and Dalfox replay
+├── nonllm.md                  R2.1: non-LLM validation funnel (sqlmap, Dalfox, CSIC)
+├── pl2.md                     R2.3: paranoia-level-2 robustness (Section 5.6, Table 11)
+├── benign_diversity.md        R2.5: benign-diversity false-positive supplement
 └── README.md
 ```
 

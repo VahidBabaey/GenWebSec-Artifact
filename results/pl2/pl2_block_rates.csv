@@ -1,0 +1,7 @@
+family,configuration,n_held_out_sets,n_runs,block_rate_mean_pct,block_rate_min_pct,block_rate_max_pct,csic_fp_pct,customapp_fp_pct
+sqli,CRS-only,40,40,99.83,96.27,100.00,10.30,0.00
+sqli,CG-Static,40,400,100.00,100.00,100.00,10.30,0.18
+sqli,CG-Adaptive,40,400,100.00,100.00,100.00,10.30,0.11
+xss,CRS-only,15,15,75.19,42.00,99.26,10.30,0.00
+xss,CG-Static,15,150,99.98,99.71,100.00,10.30,0.00
+xss,CG-Adaptive,15,150,99.98,99.71,100.00,10.30,0.00

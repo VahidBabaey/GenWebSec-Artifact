@@ -62,15 +62,18 @@ genwebsec-artifact/
 ├── LICENSE              license terms
 ├── CITATION.cff         how to cite the paper and the artifact
 ├── SECURITY.md          authorized use and responsible disclosure
+├── SHA256SUMS           SHA-256 of every released file (verify with sha256sum -c)
+├── CHECKSUMS.md         how to verify the artifact and what the checksums cover
 ├── environment/         exact software, hardware, and execution-date records
 ├── prompts/             redacted defense-agent prompts; attack prompts are withheld
 ├── configs/             ModSecurity, CRS, and per-experiment configuration
 ├── data/                released corpora and dataset provenance
-├── results/             structured per-run results for RQ1 through RQ4
+├── results/             structured per-run results for RQ1 through RQ4 and the revision analyses
 ├── rules/               generated rules, admission outcomes, final rulesets
 ├── logs/                sanitized structured run logs
 ├── scripts/             experiment-running code
 ├── analysis/            scripts that regenerate the paper's tables (and figure data)
+├── manifests/           per-comment file maps and provenance checksums
 └── docs/                supplementary documentation
 ```
 

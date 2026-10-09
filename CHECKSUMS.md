@@ -3,7 +3,7 @@
 ## `SHA256SUMS` (every released file)
 
 `SHA256SUMS` at the repository root lists a SHA-256 hash for every released file
-(346 files), in the standard `<hash>  <path>` format. Verify the whole artifact
+(455 files), in the standard `<hash>  <path>` format. Verify the whole artifact
 from the repository root with:
 
 ```
@@ -18,11 +18,23 @@ released here:
 | benign corpora | `data/benign/` (7 files) |
 | final per-seed rulesets | `rules/final_rulesets/` (40 files) |
 | experiment configuration files | `configs/` (16 files) |
-| released result tables | `results/` (135 files) |
+| released result tables | `results/` (237 files, including the PL2 evaluation `results/pl2/`) |
 
 Regenerating `SHA256SUMS` after any change and re-running the check is how a
-reviewer confirms a repository copy matches the artifact used in the paper. The file
-excludes only itself.
+reviewer confirms a repository copy matches the artifact used in the paper.
+`SHA256SUMS` lists neither itself nor this file (`CHECKSUMS.md`): both are manifests
+that change whenever any other file does, so excluding them is what lets
+`sha256sum -c SHA256SUMS` pass cleanly on a fresh checkout. Regenerate it from the
+repository root over the tracked files, in byte-exact sorted order:
+
+```
+git ls-files | grep -vxE 'SHA256SUMS|CHECKSUMS\.md' | LC_ALL=C sort \
+  | xargs -d '\n' sha256sum > SHA256SUMS
+```
+
+`.gitattributes` disables end-of-line conversion (`* -text`), so the hashes are over
+the exact released bytes and `sha256sum -c` verifies identically on Linux, macOS, and
+Windows.
 
 ## `manifests/provenance_checksums.csv` (withheld and third-party inputs)
 

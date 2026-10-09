@@ -1,0 +1,6 @@
+family,technique,seed,n_rules,corpus,blocked,errors,total,fp_pct,status
+sqli,CG-Adaptive,2,5,bwapp_login,0,0,1000,0.0000,ok
+sqli,CG-Adaptive,2,5,bwapp_search,0,0,1000,0.0000,ok
+sqli,CG-Adaptive,2,5,juice_login,0,0,1000,0.0000,ok
+sqli,CG-Adaptive,2,5,juice_search,0,0,1000,0.0000,ok
+sqli,CG-Adaptive,2,5,csic,861,0,8363,10.2953,ok

@@ -29,9 +29,9 @@ Read from the experiment code, not the paper.
 
 | Parameter | Value | Source |
 | --- | --- | --- |
-| Provider interface | OpenRouter v1 chat-completions | `helpers/llm_client.py` |
+| Provider interface | OpenRouter v1 chat-completions | `scripts/helpers/llm_client.py` |
 | Client | OpenAI Python SDK 2.8.0 | `environment/requirements.txt` |
-| Model (attacker, defender, baseline) | `openai/gpt-4.1-mini` | `WorkFlowV2/pilot_*_defense_v2.py` |
+| Model (attacker, defender, baseline) | `openai/gpt-4.1-mini` | `scripts/pilots/pilot_*_defense_v2.py` |
 | `top_p` | provider default (not set) | " |
 
 The defense-specific parameters (temperature, token limits, attempt budget) are

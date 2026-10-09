@@ -61,5 +61,5 @@ matrix". In the code the distance is `1.0 - Levenshtein.ratio(a, b)` and, becaus
 therefore compute the distance matrix and label connected components directly;
 the code records that this is label-identical to
 `sklearn.cluster.DBSCAN(metric='precomputed')` for every epsilon in the sweep. A
-legacy `helpers/clustering.py` exists but is not the code path used by the reported
+legacy `scripts/helpers/clustering.py` exists but is not the code path used by the reported
 runs; the canonical clustering is inline in the pilots.

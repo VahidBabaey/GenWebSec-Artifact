@@ -1,0 +1,2 @@
+family,technique,seed,n_rules,corpus,blocked,errors,total,fp_pct,status
+xss,CG-Static,2,5,customapp,0,0,2000,0.0000,ok

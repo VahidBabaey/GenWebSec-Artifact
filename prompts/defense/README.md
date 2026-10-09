@@ -34,16 +34,16 @@ Read from the experiment code, not the paper.
 
 | Parameter | Value | Source (file:line) |
 | --- | --- | --- |
-| Model | `openai/gpt-4.1-mini` | `pilot_D1_customapp_defense_v2.py:58` |
-| Temperature | 0.3 | `pilot_D1_customapp_defense_v2.py:373,452` |
-| Max output tokens, grouped synthesis | 2048 | `pilot_D1_customapp_defense_v2.py:373` |
-| Max output tokens, per-payload synthesis | 1024 | `pilot_D1_customapp_defense_v2.py:452` |
-| Attempts per synthesis unit | 3 (`MAX_ATTEMPTS`) | `pilot_D1_customapp_defense_v2.py:60` |
-| Cumulative FP tolerance | 1% (`MAX_FP_RATE`) | `pilot_D1_customapp_defense_v2.py:61` |
-| Provider seed | `run_seed * 1e6 + per-call index` | `pilot_D1_customapp_defense_v2.py:527` |
+| Model | `openai/gpt-4.1-mini` | `scripts/pilots/pilot_D1_customapp_defense_v2.py:58` |
+| Temperature | 0.3 | `scripts/pilots/pilot_D1_customapp_defense_v2.py:373,452` |
+| Max output tokens, grouped synthesis | 2048 | `scripts/pilots/pilot_D1_customapp_defense_v2.py:373` |
+| Max output tokens, per-payload synthesis | 1024 | `scripts/pilots/pilot_D1_customapp_defense_v2.py:452` |
+| Attempts per synthesis unit | 3 (`MAX_ATTEMPTS`) | `scripts/pilots/pilot_D1_customapp_defense_v2.py:60` |
+| Cumulative FP tolerance | 1% (`MAX_FP_RATE`) | `scripts/pilots/pilot_D1_customapp_defense_v2.py:61` |
+| Provider seed | `run_seed * 1e6 + per-call index` | `scripts/pilots/pilot_D1_customapp_defense_v2.py:527` |
 | `top_p` | provider default (not set) | call sites above |
 
-The XSS pilot (`pilot_D2_customxss_defense_v2.py`) uses the same values.
+The XSS pilot (`scripts/pilots/pilot_D2_customxss_defense_v2.py`) uses the same values.
 
 ## Output format
 
