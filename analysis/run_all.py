@@ -10,9 +10,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SCRIPTS = [
     "rq1_aggregate.py", "rq1_confidence_intervals.py",
+    "crs429_generation.py", "attack_diversity.py",
     "rq2_aggregate.py", "rq2_rg_paired.py", "rq2_eps_sweep.py",
     "rq3_aggregate.py", "rq3_eps_sweep.py", "rq3_round_trace.py",
     "rq4_primary.py", "rq4_eps_sweep.py", "rq4_significance.py", "rq4_fp.py",
+    "crs429_cg_replay.py", "pl2_table.py",
     "budget_aggregate.py", "nonllm_funnel.py", "latency_table.py",
 ]
 

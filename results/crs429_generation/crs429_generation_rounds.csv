@@ -1,0 +1,301 @@
+page,family,entry_point,seed,round,generated,validated_step1,waf_bypass_non403_step2,false_bypass,confirmed_3step,new_distinct,cumulative_distinct_confirmed
+customapp_login,SQLi,Login,1,0,50,44,34,0,34,34,34
+customapp_login,SQLi,Login,1,1,52,49,34,0,34,34,68
+customapp_login,SQLi,Login,1,2,50,49,39,0,39,39,107
+customapp_login,SQLi,Login,1,3,50,50,36,0,36,36,143
+customapp_login,SQLi,Login,1,4,50,50,36,0,36,36,179
+customapp_login,SQLi,Login,1,5,50,50,40,0,40,40,219
+customapp_login,SQLi,Login,1,6,50,50,34,0,34,34,253
+customapp_login,SQLi,Login,1,7,50,50,40,0,40,40,293
+customapp_login,SQLi,Login,1,8,50,49,34,0,34,34,327
+customapp_login,SQLi,Login,1,9,50,45,34,0,34,34,361
+customapp_login,SQLi,Login,2,0,49,39,26,0,26,26,26
+customapp_login,SQLi,Login,2,1,51,46,24,0,24,24,50
+customapp_login,SQLi,Login,2,2,50,50,40,0,40,40,90
+customapp_login,SQLi,Login,2,3,50,48,43,0,43,43,133
+customapp_login,SQLi,Login,2,4,50,50,42,0,42,42,175
+customapp_login,SQLi,Login,2,5,50,50,45,0,45,45,220
+customapp_login,SQLi,Login,2,6,50,50,42,0,42,42,262
+customapp_login,SQLi,Login,2,7,50,50,44,0,44,44,306
+customapp_login,SQLi,Login,2,8,50,50,38,0,38,38,344
+customapp_login,SQLi,Login,2,9,50,50,46,0,46,46,390
+customapp_login,SQLi,Login,3,0,48,46,30,0,30,30,30
+customapp_login,SQLi,Login,3,1,50,45,35,0,35,35,65
+customapp_login,SQLi,Login,3,2,50,50,43,0,43,43,108
+customapp_login,SQLi,Login,3,3,50,49,45,0,45,45,153
+customapp_login,SQLi,Login,3,4,50,50,43,0,43,43,196
+customapp_login,SQLi,Login,3,5,50,49,41,0,41,41,237
+customapp_login,SQLi,Login,3,6,50,47,42,0,42,42,279
+customapp_login,SQLi,Login,3,7,50,50,47,0,47,47,326
+customapp_login,SQLi,Login,3,8,50,50,47,0,47,47,373
+customapp_login,SQLi,Login,3,9,50,50,47,0,47,47,420
+customapp_login,SQLi,Login,4,0,48,44,27,0,27,27,27
+customapp_login,SQLi,Login,4,1,50,45,37,0,37,37,64
+customapp_login,SQLi,Login,4,2,50,44,32,0,32,32,96
+customapp_login,SQLi,Login,4,3,50,46,30,0,30,30,126
+customapp_login,SQLi,Login,4,4,50,49,36,0,36,36,162
+customapp_login,SQLi,Login,4,5,50,50,47,0,47,47,209
+customapp_login,SQLi,Login,4,6,50,47,38,0,38,38,247
+customapp_login,SQLi,Login,4,7,50,48,37,0,37,37,284
+customapp_login,SQLi,Login,4,8,50,49,43,0,43,43,327
+customapp_login,SQLi,Login,4,9,50,50,41,0,41,41,368
+customapp_login,SQLi,Login,5,0,50,42,26,0,26,26,26
+customapp_login,SQLi,Login,5,1,50,38,27,0,27,27,53
+customapp_login,SQLi,Login,5,2,50,49,27,0,27,27,80
+customapp_login,SQLi,Login,5,3,50,49,41,0,41,41,121
+customapp_login,SQLi,Login,5,4,54,44,26,0,26,26,147
+customapp_login,SQLi,Login,5,5,50,50,36,0,36,36,183
+customapp_login,SQLi,Login,5,6,50,50,47,0,47,47,230
+customapp_login,SQLi,Login,5,7,50,50,38,0,38,38,268
+customapp_login,SQLi,Login,5,8,50,50,31,0,31,31,299
+customapp_login,SQLi,Login,5,9,50,50,33,0,33,33,332
+customapp_search,SQLi,Search,1,0,50,40,19,0,19,19,19
+customapp_search,SQLi,Search,1,1,50,44,28,0,28,28,47
+customapp_search,SQLi,Search,1,2,50,49,44,0,44,44,91
+customapp_search,SQLi,Search,1,3,50,47,45,0,45,45,136
+customapp_search,SQLi,Search,1,4,50,40,39,0,39,39,175
+customapp_search,SQLi,Search,1,5,50,45,44,0,44,44,219
+customapp_search,SQLi,Search,1,6,50,42,40,0,40,40,259
+customapp_search,SQLi,Search,1,7,50,44,42,0,42,42,301
+customapp_search,SQLi,Search,1,8,50,50,50,0,50,50,351
+customapp_search,SQLi,Search,1,9,50,50,50,0,50,50,401
+customapp_search,SQLi,Search,2,0,50,44,16,0,16,16,16
+customapp_search,SQLi,Search,2,1,50,44,26,0,26,26,42
+customapp_search,SQLi,Search,2,2,50,50,48,0,48,48,90
+customapp_search,SQLi,Search,2,3,50,47,47,0,47,47,137
+customapp_search,SQLi,Search,2,4,50,44,41,0,41,41,178
+customapp_search,SQLi,Search,2,5,50,50,49,0,49,49,227
+customapp_search,SQLi,Search,2,6,50,49,49,0,49,49,276
+customapp_search,SQLi,Search,2,7,50,49,49,0,49,49,325
+customapp_search,SQLi,Search,2,8,50,46,44,0,44,44,369
+customapp_search,SQLi,Search,2,9,50,47,47,0,47,47,416
+customapp_search,SQLi,Search,3,0,50,45,22,0,22,22,22
+customapp_search,SQLi,Search,3,1,50,43,31,0,31,31,53
+customapp_search,SQLi,Search,3,2,50,45,37,0,37,37,90
+customapp_search,SQLi,Search,3,3,50,45,41,0,41,41,131
+customapp_search,SQLi,Search,3,4,50,44,40,0,40,40,171
+customapp_search,SQLi,Search,3,5,50,43,43,0,43,43,214
+customapp_search,SQLi,Search,3,6,51,47,43,0,43,43,257
+customapp_search,SQLi,Search,3,7,50,45,45,0,45,45,302
+customapp_search,SQLi,Search,3,8,50,48,48,0,48,48,350
+customapp_search,SQLi,Search,3,9,50,48,48,0,48,48,398
+customapp_search,SQLi,Search,4,0,50,49,17,0,17,17,17
+customapp_search,SQLi,Search,4,1,50,45,32,0,32,32,49
+customapp_search,SQLi,Search,4,2,50,48,46,0,46,46,95
+customapp_search,SQLi,Search,4,3,50,41,37,0,37,37,132
+customapp_search,SQLi,Search,4,4,50,47,47,0,47,47,179
+customapp_search,SQLi,Search,4,5,50,40,39,0,39,39,218
+customapp_search,SQLi,Search,4,6,50,48,46,0,46,46,264
+customapp_search,SQLi,Search,4,7,50,48,47,0,47,47,311
+customapp_search,SQLi,Search,4,8,50,48,45,0,45,45,356
+customapp_search,SQLi,Search,4,9,50,47,45,0,45,45,401
+customapp_search,SQLi,Search,5,0,50,45,18,0,18,18,18
+customapp_search,SQLi,Search,5,1,50,48,29,0,29,29,47
+customapp_search,SQLi,Search,5,2,50,49,37,0,37,37,84
+customapp_search,SQLi,Search,5,3,50,43,41,0,41,41,125
+customapp_search,SQLi,Search,5,4,50,45,45,0,45,45,170
+customapp_search,SQLi,Search,5,5,50,48,47,0,47,47,217
+customapp_search,SQLi,Search,5,6,50,46,45,0,45,45,262
+customapp_search,SQLi,Search,5,7,50,47,47,0,47,47,309
+customapp_search,SQLi,Search,5,8,50,47,47,0,47,47,356
+customapp_search,SQLi,Search,5,9,50,45,45,0,45,45,401
+customapp_product,SQLi,URL parameter,1,0,50,47,22,0,22,22,22
+customapp_product,SQLi,URL parameter,1,1,50,48,38,0,38,38,60
+customapp_product,SQLi,URL parameter,1,2,50,41,37,0,37,37,97
+customapp_product,SQLi,URL parameter,1,3,50,48,45,0,45,45,142
+customapp_product,SQLi,URL parameter,1,4,50,47,47,0,47,47,189
+customapp_product,SQLi,URL parameter,1,5,50,50,48,0,48,48,237
+customapp_product,SQLi,URL parameter,1,6,50,50,49,0,49,49,286
+customapp_product,SQLi,URL parameter,1,7,50,49,48,0,48,48,334
+customapp_product,SQLi,URL parameter,1,8,51,44,43,0,43,43,377
+customapp_product,SQLi,URL parameter,1,9,50,47,45,0,45,45,422
+customapp_product,SQLi,URL parameter,2,0,50,45,23,0,23,23,23
+customapp_product,SQLi,URL parameter,2,1,50,43,31,0,31,31,54
+customapp_product,SQLi,URL parameter,2,2,50,47,39,0,39,39,93
+customapp_product,SQLi,URL parameter,2,3,50,44,38,0,38,38,131
+customapp_product,SQLi,URL parameter,2,4,51,49,48,0,48,48,179
+customapp_product,SQLi,URL parameter,2,5,50,46,43,0,43,43,222
+customapp_product,SQLi,URL parameter,2,6,50,47,47,0,47,47,269
+customapp_product,SQLi,URL parameter,2,7,50,46,43,0,43,43,312
+customapp_product,SQLi,URL parameter,2,8,50,45,45,0,45,45,357
+customapp_product,SQLi,URL parameter,2,9,50,47,47,0,47,47,404
+customapp_product,SQLi,URL parameter,3,0,50,47,15,0,15,15,15
+customapp_product,SQLi,URL parameter,3,1,50,47,24,0,24,24,39
+customapp_product,SQLi,URL parameter,3,2,50,40,26,0,26,26,65
+customapp_product,SQLi,URL parameter,3,3,50,47,39,0,39,39,104
+customapp_product,SQLi,URL parameter,3,4,50,42,40,0,40,40,144
+customapp_product,SQLi,URL parameter,3,5,50,45,36,0,36,36,180
+customapp_product,SQLi,URL parameter,3,6,50,48,42,0,42,42,222
+customapp_product,SQLi,URL parameter,3,7,50,42,42,0,42,42,264
+customapp_product,SQLi,URL parameter,3,8,50,49,49,0,49,49,313
+customapp_product,SQLi,URL parameter,3,9,50,47,46,0,46,46,359
+customapp_product,SQLi,URL parameter,4,0,50,47,14,0,14,14,14
+customapp_product,SQLi,URL parameter,4,1,50,48,28,0,28,28,42
+customapp_product,SQLi,URL parameter,4,2,50,40,37,0,37,37,79
+customapp_product,SQLi,URL parameter,4,3,50,43,37,0,37,37,116
+customapp_product,SQLi,URL parameter,4,4,50,46,42,0,42,42,158
+customapp_product,SQLi,URL parameter,4,5,50,46,46,0,46,46,204
+customapp_product,SQLi,URL parameter,4,6,50,45,45,0,45,45,249
+customapp_product,SQLi,URL parameter,4,7,50,46,43,0,43,43,292
+customapp_product,SQLi,URL parameter,4,8,50,48,47,0,47,47,339
+customapp_product,SQLi,URL parameter,4,9,50,48,48,0,48,48,387
+customapp_product,SQLi,URL parameter,5,0,50,45,17,0,17,17,17
+customapp_product,SQLi,URL parameter,5,1,50,47,36,0,36,36,53
+customapp_product,SQLi,URL parameter,5,2,50,46,39,0,39,39,92
+customapp_product,SQLi,URL parameter,5,3,50,48,44,0,44,44,136
+customapp_product,SQLi,URL parameter,5,4,50,48,48,0,48,48,184
+customapp_product,SQLi,URL parameter,5,5,50,48,45,0,45,45,229
+customapp_product,SQLi,URL parameter,5,6,50,49,47,0,47,47,276
+customapp_product,SQLi,URL parameter,5,7,50,46,46,0,46,46,322
+customapp_product,SQLi,URL parameter,5,8,50,43,41,0,41,41,363
+customapp_product,SQLi,URL parameter,5,9,50,46,43,0,43,43,406
+customapp_filter,SQLi,Filter,1,0,49,42,16,0,16,16,16
+customapp_filter,SQLi,Filter,1,1,50,46,35,0,35,35,51
+customapp_filter,SQLi,Filter,1,2,50,42,37,0,37,34,85
+customapp_filter,SQLi,Filter,1,3,50,46,45,0,45,45,130
+customapp_filter,SQLi,Filter,1,4,50,47,45,0,45,45,175
+customapp_filter,SQLi,Filter,1,5,50,48,48,0,48,48,223
+customapp_filter,SQLi,Filter,1,6,50,46,45,0,45,44,267
+customapp_filter,SQLi,Filter,1,7,50,47,47,0,47,47,314
+customapp_filter,SQLi,Filter,1,8,50,42,40,0,40,40,354
+customapp_filter,SQLi,Filter,1,9,50,47,47,0,47,47,401
+customapp_filter,SQLi,Filter,2,0,50,46,5,0,5,5,5
+customapp_filter,SQLi,Filter,2,1,50,50,31,0,31,31,36
+customapp_filter,SQLi,Filter,2,2,50,48,43,0,43,43,79
+customapp_filter,SQLi,Filter,2,3,50,47,46,0,46,46,125
+customapp_filter,SQLi,Filter,2,4,50,46,45,0,45,45,170
+customapp_filter,SQLi,Filter,2,5,50,48,48,0,48,48,218
+customapp_filter,SQLi,Filter,2,6,50,48,48,0,48,48,266
+customapp_filter,SQLi,Filter,2,7,50,47,45,0,45,45,311
+customapp_filter,SQLi,Filter,2,8,50,45,42,0,42,42,353
+customapp_filter,SQLi,Filter,2,9,50,50,48,0,48,48,401
+customapp_filter,SQLi,Filter,3,0,50,47,19,0,19,19,19
+customapp_filter,SQLi,Filter,3,1,50,47,34,0,34,34,53
+customapp_filter,SQLi,Filter,3,2,50,42,38,0,38,38,91
+customapp_filter,SQLi,Filter,3,3,50,48,45,0,45,45,136
+customapp_filter,SQLi,Filter,3,4,50,44,44,0,44,44,180
+customapp_filter,SQLi,Filter,3,5,50,43,42,0,42,37,217
+customapp_filter,SQLi,Filter,3,6,50,46,42,0,42,42,259
+customapp_filter,SQLi,Filter,3,7,50,40,37,0,37,37,296
+customapp_filter,SQLi,Filter,3,8,50,42,41,0,41,41,337
+customapp_filter,SQLi,Filter,3,9,50,43,43,0,43,43,380
+customapp_filter,SQLi,Filter,4,0,50,47,15,0,15,15,15
+customapp_filter,SQLi,Filter,4,1,50,42,27,0,27,27,42
+customapp_filter,SQLi,Filter,4,2,50,46,43,0,43,43,85
+customapp_filter,SQLi,Filter,4,3,50,47,44,0,44,44,129
+customapp_filter,SQLi,Filter,4,4,50,42,40,0,40,40,169
+customapp_filter,SQLi,Filter,4,5,50,48,47,0,47,47,216
+customapp_filter,SQLi,Filter,4,6,50,48,46,0,46,44,260
+customapp_filter,SQLi,Filter,4,7,50,49,49,0,49,49,309
+customapp_filter,SQLi,Filter,4,8,50,45,43,0,43,43,352
+customapp_filter,SQLi,Filter,4,9,50,47,47,0,47,47,399
+customapp_filter,SQLi,Filter,5,0,50,45,15,0,15,15,15
+customapp_filter,SQLi,Filter,5,1,50,44,36,0,36,36,51
+customapp_filter,SQLi,Filter,5,2,50,47,42,0,42,42,93
+customapp_filter,SQLi,Filter,5,3,50,49,49,0,49,49,142
+customapp_filter,SQLi,Filter,5,4,50,48,47,0,47,47,189
+customapp_filter,SQLi,Filter,5,5,50,49,47,0,47,47,236
+customapp_filter,SQLi,Filter,5,6,50,47,47,0,47,47,283
+customapp_filter,SQLi,Filter,5,7,50,49,47,0,47,47,330
+customapp_filter,SQLi,Filter,5,8,50,48,48,0,48,48,378
+customapp_filter,SQLi,Filter,5,9,50,35,33,0,33,33,411
+customxss_search,XSS,Search,1,0,40,40,40,0,40,40,40
+customxss_search,XSS,Search,1,1,45,45,45,0,45,42,82
+customxss_search,XSS,Search,1,2,49,49,49,0,49,48,130
+customxss_search,XSS,Search,1,3,49,49,49,0,49,47,177
+customxss_search,XSS,Search,1,4,50,50,50,0,50,45,222
+customxss_search,XSS,Search,1,5,49,49,49,0,49,48,270
+customxss_search,XSS,Search,1,6,49,49,49,0,49,45,315
+customxss_search,XSS,Search,1,7,49,48,48,0,48,43,358
+customxss_search,XSS,Search,1,8,50,50,50,0,50,49,407
+customxss_search,XSS,Search,1,9,50,50,50,0,50,44,451
+customxss_search,XSS,Search,2,0,35,35,35,0,35,35,35
+customxss_search,XSS,Search,2,1,46,46,46,0,46,37,72
+customxss_search,XSS,Search,2,2,50,50,50,0,50,36,108
+customxss_search,XSS,Search,2,3,50,50,50,0,50,41,149
+customxss_search,XSS,Search,2,4,50,50,50,0,50,48,197
+customxss_search,XSS,Search,2,5,50,50,50,0,50,48,245
+customxss_search,XSS,Search,2,6,50,50,50,0,50,50,295
+customxss_search,XSS,Search,2,7,50,50,50,0,50,50,345
+customxss_search,XSS,Search,2,8,49,48,48,0,48,47,392
+customxss_search,XSS,Search,2,9,50,50,50,0,50,50,442
+customxss_search,XSS,Search,3,0,27,26,26,0,26,26,26
+customxss_search,XSS,Search,3,1,49,49,49,0,49,48,74
+customxss_search,XSS,Search,3,2,50,50,50,0,50,50,124
+customxss_search,XSS,Search,3,3,50,50,50,0,50,49,173
+customxss_search,XSS,Search,3,4,48,48,48,0,48,47,220
+customxss_search,XSS,Search,3,5,49,48,48,0,48,48,268
+customxss_search,XSS,Search,3,6,50,50,50,0,50,48,316
+customxss_search,XSS,Search,3,7,50,45,45,0,45,40,356
+customxss_search,XSS,Search,3,8,49,49,40,0,40,38,394
+customxss_search,XSS,Search,3,9,50,50,50,0,50,47,441
+customxss_search,XSS,Search,4,0,38,37,37,0,37,37,37
+customxss_search,XSS,Search,4,1,49,49,49,0,49,49,86
+customxss_search,XSS,Search,4,2,50,50,50,0,50,50,136
+customxss_search,XSS,Search,4,3,50,50,50,0,50,50,186
+customxss_search,XSS,Search,4,4,50,50,50,0,50,50,236
+customxss_search,XSS,Search,4,5,50,50,50,0,50,50,286
+customxss_search,XSS,Search,4,6,50,50,50,0,50,50,336
+customxss_search,XSS,Search,4,7,47,47,47,0,47,46,382
+customxss_search,XSS,Search,4,8,50,50,50,0,50,47,429
+customxss_search,XSS,Search,4,9,50,50,50,0,50,49,478
+customxss_search,XSS,Search,5,0,44,41,41,0,41,41,41
+customxss_search,XSS,Search,5,1,50,46,46,0,46,41,82
+customxss_search,XSS,Search,5,2,45,39,39,0,39,23,105
+customxss_search,XSS,Search,5,3,50,50,50,0,50,50,155
+customxss_search,XSS,Search,5,4,50,50,50,0,50,49,204
+customxss_search,XSS,Search,5,5,50,50,50,0,50,49,253
+customxss_search,XSS,Search,5,6,50,50,50,0,50,50,303
+customxss_search,XSS,Search,5,7,49,49,49,0,49,49,352
+customxss_search,XSS,Search,5,8,49,49,49,0,49,49,401
+customxss_search,XSS,Search,5,9,50,50,50,0,50,50,451
+customxss_calc,XSS,Calculator,1,0,49,33,15,0,15,15,15
+customxss_calc,XSS,Calculator,1,1,50,39,25,0,25,25,40
+customxss_calc,XSS,Calculator,1,2,50,34,32,0,32,32,72
+customxss_calc,XSS,Calculator,1,3,50,50,48,0,48,48,120
+customxss_calc,XSS,Calculator,1,4,50,46,43,0,43,43,163
+customxss_calc,XSS,Calculator,1,5,50,49,49,0,49,49,212
+customxss_calc,XSS,Calculator,1,6,50,46,46,0,46,46,258
+customxss_calc,XSS,Calculator,1,7,50,50,46,0,46,46,304
+customxss_calc,XSS,Calculator,1,8,50,44,44,0,44,44,348
+customxss_calc,XSS,Calculator,1,9,50,48,48,0,48,48,396
+customxss_calc,XSS,Calculator,2,0,49,37,24,0,24,24,24
+customxss_calc,XSS,Calculator,2,1,50,40,38,0,38,38,62
+customxss_calc,XSS,Calculator,2,2,50,50,49,0,49,49,111
+customxss_calc,XSS,Calculator,2,3,50,48,48,0,48,48,159
+customxss_calc,XSS,Calculator,2,4,50,32,30,0,30,30,189
+customxss_calc,XSS,Calculator,2,5,50,46,46,0,46,46,235
+customxss_calc,XSS,Calculator,2,6,50,50,50,0,50,50,285
+customxss_calc,XSS,Calculator,2,7,50,50,48,0,48,48,333
+customxss_calc,XSS,Calculator,2,8,50,45,45,0,45,45,378
+customxss_calc,XSS,Calculator,2,9,50,49,49,0,49,49,427
+customxss_calc,XSS,Calculator,3,0,50,38,26,0,26,26,26
+customxss_calc,XSS,Calculator,3,1,50,34,33,0,33,33,59
+customxss_calc,XSS,Calculator,3,2,50,18,18,0,18,18,77
+customxss_calc,XSS,Calculator,3,3,50,24,22,0,22,22,99
+customxss_calc,XSS,Calculator,3,4,50,48,48,0,48,48,147
+customxss_calc,XSS,Calculator,3,5,50,49,49,0,49,49,196
+customxss_calc,XSS,Calculator,3,6,50,33,33,0,33,33,229
+customxss_calc,XSS,Calculator,3,7,50,33,33,0,33,33,262
+customxss_calc,XSS,Calculator,3,8,50,48,47,0,47,47,309
+customxss_calc,XSS,Calculator,3,9,50,50,48,0,48,48,357
+customxss_calc,XSS,Calculator,4,0,48,41,28,0,28,28,28
+customxss_calc,XSS,Calculator,4,1,49,37,35,0,35,34,62
+customxss_calc,XSS,Calculator,4,2,50,42,42,0,42,41,103
+customxss_calc,XSS,Calculator,4,3,51,50,49,0,49,49,152
+customxss_calc,XSS,Calculator,4,4,51,29,29,0,29,29,181
+customxss_calc,XSS,Calculator,4,5,50,48,44,0,44,44,225
+customxss_calc,XSS,Calculator,4,6,50,49,48,0,48,48,273
+customxss_calc,XSS,Calculator,4,7,50,36,36,0,36,36,309
+customxss_calc,XSS,Calculator,4,8,50,50,50,0,50,50,359
+customxss_calc,XSS,Calculator,4,9,50,50,50,0,50,50,409
+customxss_calc,XSS,Calculator,5,0,47,35,20,0,20,20,20
+customxss_calc,XSS,Calculator,5,1,50,33,20,0,20,20,40
+customxss_calc,XSS,Calculator,5,2,50,38,38,0,38,38,78
+customxss_calc,XSS,Calculator,5,3,50,47,47,0,47,47,125
+customxss_calc,XSS,Calculator,5,4,51,47,46,0,46,46,171
+customxss_calc,XSS,Calculator,5,5,50,49,49,0,49,49,220
+customxss_calc,XSS,Calculator,5,6,50,41,40,0,40,40,260
+customxss_calc,XSS,Calculator,5,7,50,48,48,0,48,48,308
+customxss_calc,XSS,Calculator,5,8,50,48,48,0,48,48,356
+customxss_calc,XSS,Calculator,5,9,50,50,50,0,50,50,406

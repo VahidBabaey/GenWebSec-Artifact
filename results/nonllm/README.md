@@ -12,9 +12,12 @@ nonllm/
 ├── nonllm_funnel.csv         per source: candidates -> distinct -> backend-valid -> CRS-bypassing
 ├── nonllm_funnel_detail.csv  the same, broken down per page and per technique
 ├── nonllm_dalfox_replay.csv  per-seed block rate of the frozen rules on the 45 Dalfox CRS bypasses
+├── nonllm_fuzzdb_replay.csv  per-seed block rate of the frozen rules on the 2 FuzzDB CRS bypasses
 ├── nonllm_sqlmap_crs_outcomes.csv      per-payload outcome (payload hashed): sqlmap, Route A + CRS
 ├── nonllm_csic_crs_outcomes.csv        per-payload outcome (payload hashed): CSIC/Torpeda
 ├── nonllm_dalfox_crs_outcomes.csv      per-payload outcome (payload hashed): Dalfox, execution + CRS
+├── nonllm_fuzzdb_crs_outcomes.csv      per-payload outcome (payload hashed): FuzzDB (67)
+├── nonllm_wafamole_crs_outcomes.csv    per-payload outcome (payload hashed): WAF-A-MoLE (2,457)
 ├── nonllm_dalfox_replay_perattack.csv  per-(payload,config) replay outcome (payload hashed)
 ├── scripts/                  the funnel/replay processing code (10 scripts; 2 redacted)
 └── README.md
@@ -26,11 +29,14 @@ nonllm/
 | --- | --- | --- | --- | --- | --- |
 | sqlmap | SQLi | 1,316 | 329 | 31 | 0 |
 | CSIC/Torpeda 2012 | SQLi | 57,812 | 15,796 | 224 | 0 |
+| FuzzDB | SQLi | 2,640 | 660 | 67 | 2 |
+| WAF-A-MoLE | SQLi | 400,000 | 100,000 | 2,457 | 0 |
 | Dalfox | XSS | 117 | 39 | 59 | 45 |
 
-The two SQL-injection tools produce real exploits (31 and 224 backend-valid), but
-CRS with libinjection blocks every one, so none reaches the replay stage. This is
-the expected outcome and confirms the exploit oracle is sound. The XSS tool is the
+The SQL-injection tools produce real exploits (31 / 224 / 67 / 2,457 backend-valid).
+Baseline CRS with libinjection blocks every sqlmap, CSIC/Torpeda, and WAF-A-MoLE
+exploit; only 2 FuzzDB payloads reach the replay stage. This is the expected outcome
+and confirms the exploit oracle is sound. The XSS tool is the
 substantive external-validity case: 45 of Dalfox's JavaScript-context payloads both
 fire a browser dialog and bypass CRS, reaching the replay stage as a genuine
 held-out set. Per-page and per-technique breakdowns are in
@@ -149,3 +155,19 @@ is third-party (see `data/third-party/csic-torpeda-2012.md` for retrieval,
 checksums, and counts). None of these payload sets is redistributed here; only the
 funnel counts and replay outcomes are released, consistent with
 `data/attack-corpora.md`.
+
+## FuzzDB and WAF-A-MoLE (second revision round)
+
+Two additional non-LLM SQL-injection sources were added for R2.1.
+
+- **FuzzDB** (pinned git commit `5656ab25dc6bb43bae32236fab775658a90d7380`): 660 unique payloads x 4 SQLi
+  pages = 2,640 candidates; 67 execution-valid; 2 CRS-bypassing (both on Search). The frozen co-evolved
+  rules block both: CG-Adaptive 100.0 +/- 0.0%, CG-Static 95.0 +/- 15.8% (9 seeds block 2/2, seed 10
+  blocks 1/2) -- `nonllm_fuzzdb_replay.csv`. FuzzDB provides the non-LLM SQLi incremental test.
+- **WAF-A-MoLE**: a 100,000-statement random sample (seed 42) x 4 pages = 400,000 candidates; 2,457
+  execution-valid; 0 CRS-bypassing, so there is no replay.
+
+Per-payload outcomes are released with the payload identified only by `payload_sha1`
+(`nonllm_fuzzdb_crs_outcomes.csv`, 67 rows; `nonllm_wafamole_crs_outcomes.csv`, 2,457 rows). Both sources
+are third-party; the raw tool payloads are not redistributed, and the preprocessed corpora
+(`fuzzdb_corpus.tsv`, `wafamole_corpus.json`) are hashed in `manifests/provenance_checksums.csv`.

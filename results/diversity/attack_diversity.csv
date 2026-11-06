@@ -1,0 +1,13 @@
+attack_set,family,entry_point,n_attacks,distinct_pct,n_techniques,techniques
+baseline,SQLi,Login,2118,98.54,7,quote_breakout:2087; comment_dash:2072; comment_cstyle:2061; comment_hash:14
+baseline,SQLi,Search,2358,99.53,11,comment_dash:2347; boolean_or:2347; case_when:2347; subselect:2347
+baseline,SQLi,URL parameter,2337,99.66,11,subselect:2329; boolean_or:2329; case_when:2329; comment_dash:2329
+baseline,SQLi,Filter,2298,99.70,11,subselect:2291; quote_breakout:2291; comment_dash:2291; boolean_or:2291
+baseline,XSS,Search,1472,97.76,7,operator_breakout:1439; js_comment:1439; template_literal:860; constructor_chain:628
+baseline,XSS,Calculator,1399,100.00,7,sink_call:919; constructor_chain:840; operator_breakout:336; eval_like:146
+crs429,SQLi,Login,1871,99.04,8,comment_dash:1853; quote_breakout:1853; comment_cstyle:1839; stacked:31
+crs429,SQLi,Search,2017,100.00,11,subselect:2017; case_when:2017; comment_dash:2017; quote_breakout:2017
+crs429,SQLi,URL parameter,1978,100.00,11,subselect:1978; comment_cstyle:1978; boolean_or:1978; comment_dash:1978
+crs429,SQLi,Filter,1992,100.00,12,case_when:1992; subselect:1992; quote_breakout:1992; comment_dash:1992
+crs429,XSS,Search,2263,90.50,3,sink_call:2048; operator_breakout:2048; js_comment:2048
+crs429,XSS,Calculator,1995,99.15,6,constructor_chain:1929; operator_breakout:990; template_literal:938; other:22

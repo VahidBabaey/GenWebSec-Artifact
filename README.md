@@ -139,7 +139,7 @@ Every table in the main paper and the appendix is regenerable from the released,
 python analysis/run_all.py
 ```
 
-runs all fifteen scripts. `analysis/README.md` maps each script to the paper table(s) it reproduces
+runs all nineteen scripts. `analysis/README.md` maps each script to the paper table(s) it reproduces
 and records the verification. The scripts use only the Python standard library.
 
 The scripts regenerate the tables and the data behind the paper's one data-driven figure (the RQ1

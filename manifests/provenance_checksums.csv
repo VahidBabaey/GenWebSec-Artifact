@@ -20,3 +20,5 @@ CRS-4.29 confirmed-bypass corpus (withheld),customapp_login_confirmed_bypasses_P
 CRS-4.29 confirmed-bypass corpus (withheld),juice_login_confirmed_bypasses_PRIVATE.txt,6568,e154b6dfd8e4297351773d2501e2ad956062a4fdb7d246d8c5622bf3255f6c6f
 CRS-4.29 confirmed-bypass corpus (withheld),customxss_calc_confirmed_bypasses_PRIVATE.txt,12418,912ae4aae90baf2b045aaedd25ef868741c613d0ea4c226565af7deca42a277f
 CRS-4.29 confirmed-bypass corpus (withheld),bwapp_xss_eval_confirmed_bypasses_PRIVATE.txt,15122,64c55df02bd153030f28849236615233891c5a21a01e50f6801875ae46e36d5b
+external attack dataset after preprocessing (withheld),fuzzdb_corpus.tsv,71334,6ac00004ba0dcbaf4f754ce7dce8a952239c56916cd70f2cf9e94d906824d098
+external attack dataset after preprocessing (withheld),wafamole_corpus.json,19744711,71ce467c2e80ebbaebd2fc6a8dce8bb9c3ba597d8a7016de3ce58dd79ac4a58a

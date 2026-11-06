@@ -18,6 +18,8 @@ Python 3.10+, standard library only (no numpy/scipy/pandas required).
 | --- | --- | --- |
 | `rq1_aggregate.py` | RQ1 summary, dedup stats, per-round trajectory | `results/rq1/` |
 | `rq1_confidence_intervals.py` | RQ1 bypass-rate 95% Student-t CIs | `results/rq1/` |
+| `crs429_generation.py` | CRS-4.29.0 attack generation, per-page bypass rate (tab:crs429-gen) | `results/crs429_generation/` |
+| `attack_diversity.py` | attack diversity, baseline + CRS-4.29 (tab:div-baseline, tab:div-crs429) | `results/diversity/` |
 | `rq2_aggregate.py` | RQ2 effectiveness + budget (PP/RG/CG) | `results/rq2/` |
 | `rq2_rg_paired.py` | RQ2 random-group control: paired Wilcoxon + rank-biserial | `results/rq2/` |
 | `rq2_eps_sweep.py` | RQ2 per-page CG sensitivity over epsilon | `results/rq2/` |
@@ -28,8 +30,10 @@ Python 3.10+, standard library only (no numpy/scipy/pandas required).
 | `rq4_eps_sweep.py` | RQ4 held-out block rate over epsilon | `results/rq4/` |
 | `rq4_significance.py` | RQ4 paired Wilcoxon + bootstrap 95% CI | `results/rq4/` |
 | `rq4_fp.py` | RQ4 benign FP matrix + incident detail | `results/rq4_fp/` |
+| `crs429_cg_replay.py` | co-evolved rules vs held-out CRS-4.29 bypasses (tab:crs429-cg-sqli, tab:crs429-cg-xss) | `results/crs429_cg/` |
+| `pl2_table.py` | PL2 two-version block + benign FP, CRS 3.3.2 and 4.29.0 (tab:r23-pl2) | `results/pl2/` |
 | `budget_aggregate.py` | all budget tables: operating-point + per-epsilon, static + adaptive | `results/budget/` |
-| `nonllm_funnel.py` | non-LLM funnel + Dalfox replay | `results/nonllm/` |
+| `nonllm_funnel.py` | non-LLM funnel (sqlmap/CSIC/FuzzDB/WAF-A-MoLE/Dalfox) + Dalfox & FuzzDB replay | `results/nonllm/` |
 | `latency_table.py` | deployed WAF request latency | `results/latency/` |
 
 ## Coverage of the specification's required scripts

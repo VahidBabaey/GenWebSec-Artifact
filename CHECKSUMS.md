@@ -3,7 +3,7 @@
 ## `SHA256SUMS` (every released file)
 
 `SHA256SUMS` at the repository root lists a SHA-256 hash for every released file
-(455 files), in the standard `<hash>  <path>` format. Verify the whole artifact
+(474 files), in the standard `<hash>  <path>` format. Verify the whole artifact
 from the repository root with:
 
 ```
@@ -18,7 +18,7 @@ released here:
 | benign corpora | `data/benign/` (7 files) |
 | final per-seed rulesets | `rules/final_rulesets/` (40 files) |
 | experiment configuration files | `configs/` (16 files) |
-| released result tables | `results/` (237 files, including the PL2 evaluation `results/pl2/`) |
+| released result tables | `results/` (250 files, including the PL2 evaluation `results/pl2/` and the second-revision CRS-4.29 generation/CG, attack-diversity, and FuzzDB/WAF-A-MoLE additions) |
 
 Regenerating `SHA256SUMS` after any change and re-running the check is how a
 reviewer confirms a repository copy matches the artifact used in the paper.
@@ -40,7 +40,7 @@ Windows.
 
 Two categories the specification asks to checksum are inputs we do not redistribute:
 the fixed bypass corpora (attack data) and the external attack datasets after
-preprocessing (they contain payloads). Their SHA-256 hashes are still recorded (21
+preprocessing (they contain payloads). Their SHA-256 hashes are still recorded (23
 entries, including the Frontiers-revision withheld inputs), so a reviewer who
 reconstructs those inputs can confirm they match the versions we used, without the
 payloads themselves being released.
@@ -48,7 +48,7 @@ payloads themselves being released.
 | Category | Files |
 | --- | --- |
 | fixed bypass corpora (withheld) | the six pooled winner sets the per-seed 300-attack samples are drawn from |
-| external attack datasets after preprocessing (withheld) | the deduplicated, page-instantiated candidate corpora that feed the non-LLM funnel: `sqlmap_candidates.tsv`, `csic_candidates.tsv`, `dalfox_candidates.tsv` |
+| external attack datasets after preprocessing (withheld) | the deduplicated, page-instantiated candidate corpora that feed the non-LLM funnel: `sqlmap_candidates.tsv`, `csic_candidates.tsv`, `dalfox_candidates.tsv`, `fuzzdb_corpus.tsv`, `wafamole_corpus.json` |
 | CRS-4.29 attack-prompt modules (withheld) | the four Frontiers-revision prompt modules (`*_crs429.py`) used for direct generation against CRS 4.29.0 |
 | CRS-4.29 confirmed-bypass corpora (withheld) | the four raw confirmed-bypass lists (`*_confirmed_bypasses_PRIVATE.txt`) from that experiment |
 | third-party benign after preprocessing (not redistributed) | CSIC normal replayed through baseline CRS (`csic_normal_crs_baseline.csv`, 8,363) |

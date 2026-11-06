@@ -11,6 +11,11 @@ tab:rq3-coevolution,appendix,RQ3 CG-Adaptive sensitivity swept over epsilon,"run
 tab:rq4-eps-summary,appendix,RQ4 aggregate block rates over the epsilon sweep,run_manifests: experiment=RQ4,275
 tab:fp-incidents,appendix,external false-positive incidents (frozen-rule benign replay),results/rq4_fp/,
 tab:rq3-trace,appendix,representative CG-Adaptive Login round-by-round trace,run_manifests: run_id=RQ3_SQLi_CG-Adaptive_login_eps0.3_seed7,1
-tab:nonllm,appendix,non-LLM validation funnel and Dalfox replay,results/nonllm/ (non-LLM sources + frozen rules),
+tab:nonllm,appendix,non-LLM validation funnel (sqlmap/CSIC/FuzzDB/WAF-A-MoLE/Dalfox) and Dalfox+FuzzDB replay,results/nonllm/ (non-LLM sources + frozen rules),
 R2.5-benign-diversity,revision,benign-diversity FP supplement (nested JSON + rich text) added for R2.5,results/benign_diversity/ (benign corpora + frozen-rule replay),
-tab:r23-pl2,revision,PL2 robustness: held-out block rate and benign FP at paranoia level 2 (R2.3),results/pl2/ (frozen-rule replay at PL2; see manifests/pl2.md),
+tab:r23-pl2,revision,PL2 robustness at paranoia level 2 under CRS 3.3.2 AND CRS 4.29.0: held-out block rate and benign FP (R2.3),results/pl2/ (frozen-rule replay at PL2 both CRS versions; see manifests/pl2.md and analysis/pl2_table.py),
+tab:crs429-gen,main,RQ1 attack generation directly against CRS 4.29.0 (six custom-application pages),results/crs429_generation/ (5 runs x 10 rounds per page),30
+tab:div-baseline,appendix,attack diversity (distinct percent and distinct techniques) of the baseline CRS-3.3.2 attacks,results/diversity/,
+tab:div-crs429,appendix,attack diversity of the attacks generated directly against CRS 4.29.0,results/diversity/,
+tab:crs429-cg-sqli,main,co-evolved rules (with CRS deployed) vs held-out CRS-4.29 SQLi bypasses,results/crs429_cg/ (cg_replay),
+tab:crs429-cg-xss,main,co-evolved rules (in isolation) vs held-out CRS-4.29 XSS bypasses,results/crs429_cg/ (cg_replay_cgonly),
