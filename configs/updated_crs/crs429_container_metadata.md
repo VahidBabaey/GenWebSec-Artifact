@@ -37,7 +37,7 @@ engine_producer: ['ModSecurity for Apache/2.9.15 (http://www.modsecurity.org/)',
 ## Reverse-proxy wiring
    crs-sqli :8081  --proxy-->  http://127.0.0.1:8080   (customapp SQLi backend, clean routes /login /search /product /filter)
    crs-xss  :8086  --proxy-->  http://127.0.0.1:8096   (php -S serving the customxss docroot: search.php, calc.php)
-   All replay requests sent with HTTP header 'Host: localhost' to match the CRS-3.3.2 baseline
+   All replay requests sent with HTTP header 'Host: localhost' to match the study baseline configuration
    (avoids CRS rule 920350 'Host header is a numeric IP address', a +3 anomaly artifact of connecting via 127.0.0.1).
 
 ## Exact docker run commands (reproducible)
@@ -54,6 +54,6 @@ engine_producer: ['ModSecurity for Apache/2.9.15 (http://www.modsecurity.org/)',
      -e MODSEC_AUDIT_LOG=/dev/stdout -e MODSEC_AUDIT_LOG_FORMAT=JSON -e SERVER_NAME=localhost \
      owasp/modsecurity-crs:apache
 
-## Baseline (unchanged host, for reference)
-   Apache 2.4.52 + ModSecurity 2.9.5 + OWASP CRS 3.3.2, PL1, inbound anomaly 5 / outbound 4, blocking rule 949110.
-   The host was NOT modified; the updated CRS runs in a container beside it.
+## Configuration reference
+   OWASP CRS 4.29.0, ModSecurity 2.9.15, Apache 2.4.68 (official owasp/modsecurity-crs:apache image), PL1,
+   inbound anomaly 5 / outbound 4, blocking rule 949110.

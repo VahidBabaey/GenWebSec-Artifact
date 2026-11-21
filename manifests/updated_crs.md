@@ -1,7 +1,7 @@
 # Updated-CRS evaluation (OWASP CRS 4.29.0)
 
 Maps the "persistence under an updated CRS" evaluation to its files. Every attack that bypassed the study
-baseline (OWASP CRS 3.3.2) is replayed through the current CRS (4.29.0); benign false positives are reported
+baseline is replayed through CRS 4.29.0; benign false positives are reported
 alongside; container/configuration metadata and representative audit logs are included. Supports the response
 to reviewer comment R1.3 of the Frontiers revision.
 
@@ -51,9 +51,9 @@ is bypassable" strand of reviewer comment R1.3.
   the `prompts/attack/` policy. Only counts and drivers are released.
 
 ## Notes
-- The updated CRS runs in a container (OWASP CRS 4.29.0, ModSecurity 2.9.15, Apache 2.4.68) beside the
-  unchanged study host (Apache 2.4.52 + ModSecurity 2.9.5 + CRS 3.3.2), at matched configuration
-  (paranoia 1, inbound anomaly 5, outbound 4). All requests use `Host: localhost`.
+- The CRS 4.29.0 evaluation runs in the official container (OWASP CRS 4.29.0, ModSecurity 2.9.15,
+  Apache 2.4.68) at matched configuration (paranoia 1, inbound anomaly 5, outbound 4). All requests
+  use `Host: localhost`.
 - Raw attack payloads are not published: per-request files identify payloads only by `payload_sha1`;
   residual-attack lists (`*_PRIVATE`) are withheld. Benign corpora are retained in the clear.
 - A few scripts carry canonical textbook probes (`alert(1)`, `' OR '1'='1`) used as sanity checks; these

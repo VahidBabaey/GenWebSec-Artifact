@@ -29,7 +29,7 @@ CRS baseline rejected during construction, each with the triggering rule from th
 CRS rule **941100** (XSS via libinjection); a CRS-baseline false positive, not the co-evolved rules'.
 
 ## Versions, seeds, configuration
-- Apache 2.4.52, ModSecurity 2.9.5 (blocking), OWASP CRS 3.3.2, paranoia level 1, thresholds 5/4,
+- Apache 2.4.68, ModSecurity 2.9.15 (blocking), OWASP CRS 4.29.0, paranoia level 1, thresholds 5/4,
   JSON body processor on; full list in `environment/software-versions.txt`, CRS/ModSecurity config in
   `configs/crs/` and `configs/modsecurity/`.
 - Applications: Juice Shop `bkimminich/juice-shop` 20.2.0; the custom PHP XSS application. Python 3.10.12.

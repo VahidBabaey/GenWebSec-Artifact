@@ -2,7 +2,7 @@
 """R1.3 SMOKE TEST (gate before the full run):
   (1) canonical attacks  -> expect 403 (ModSecurity active + blocking on CRS 4.29.0)
   (2) benign requests    -> expect non-403 (ideally 200, reaching the backend through the proxy)
-  (3) a few REAL RQ1 CRS-3.3.2-bypassing attacks -> record status through CRS 4.29.0
+  (3) a few REAL RQ1 confirmed bypasses -> record status through CRS 4.29.0
   (4) audit-log check     -> confirm the container emits a JSON audit record for a 403
 Status-only, no exploit oracle (per the task: just check attacks against the updated CRS)."""
 import subprocess, urllib.request, urllib.parse, urllib.error, glob, json, time
@@ -63,7 +63,7 @@ for pg, p in [("product", "2"), ("search", "shoes"), ("filter", "electronics"), 
 for pg, p in [("search", "hello world"), ("calc", "2+2"), ("calc", "3*4")]:
     print(f"  XSS /{pg:<7} -> {str(xss(pg,p)):>5}   {p!r}")
 
-print("\n========== (3) REAL RQ1 CRS-3.3.2 BYPASSES through CRS 4.29.0 (status only) ==========")
+print("\n========== (3) REAL RQ1 CONFIRMED BYPASSES through CRS 4.29.0 (status only) ==========")
 for page in ["product", "search", "login", "filter"]:
     for p in sample(f"{ROOT}/results/V2/CustomApp_A1/*A1_CRSonly_seed1/A1_customapp_{page}_winners.txt", 2):
         print(f"  SQLi/{page:<7} -> {str(sqli(page,p)):>5}   {p[:90]}")

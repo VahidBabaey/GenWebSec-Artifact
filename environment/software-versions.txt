@@ -23,26 +23,32 @@ re-derived. Collected 2026-09-14.
 
 2. WEB SERVER AND WAF
 ---------------------
-  Apache                 2.4.52 (Ubuntu)
-  Apache package         2.4.52-1ubuntu4.19
-  Apache build date      2026-03-05T18:04:29
-  ModSecurity            2.9.5   (package libapache2-mod-security2 2.9.5-1)
+  The reported results use the official OWASP CRS container image
+  owasp/modsecurity-crs:apache, pinned by digest, which bundles:
+
+  Apache                 2.4.68
+  ModSecurity            2.9.15  (producer "ModSecurity for Apache/2.9.15")
   ModSecurity mode       blocking (SecRuleEngine On)
-  Apache module          security2_module (shared)
-  OWASP CRS              3.3.2   (package modsecurity-crs 3.3.2-1)
-  CRS signature          SecComponentSignature "OWASP_CRS/3.3.2"
+  OWASP CRS              4.29.0  (SecComponentSignature "OWASP_CRS/4.29.0")
   CRS paranoia level     1
   CRS anomaly thresholds inbound 5, outbound 4
   CRS rule exclusions    none
+  Image digest           sha256:d70df2e6fecd94ad38ba815e28782c5f7c88a17bf9472576a66dfdeacada67f8
 
-  CRS is the Debian/Ubuntu package, not a git checkout, so there is no upstream
-  commit hash to record. The package version and the SecComponentSignature
-  together identify it exactly. The configuration files themselves are committed
-  under configs/crs/ and configs/modsecurity/.
+  The image digest fixes the WAF stack exactly: pulling that digest reproduces
+  the Apache, ModSecurity, and CRS versions above, with no package drift. The
+  container's environment-variable configuration (paranoia level, anomaly
+  thresholds, audit settings) and the exact docker run commands are recorded in
+  configs/updated_crs/crs429_container_metadata.md.
 
-  Commands: apache2 -v ; dpkg -l apache2 libapache2-mod-security2 modsecurity-crs
-            apachectl -M | grep -i security
-            grep -rh SecComponentSignature /usr/share/modsecurity-crs
+  Provenance note: unlike the host-level sections of this file, which were read
+  live from the host, the WAF stack above was not re-captured by a live
+  dpkg/signature snapshot at run time. It is fixed instead by the container image
+  digest, which is the stronger identifier: a digest pull reproduces the exact
+  Apache, ModSecurity, and CRS binaries used.
+
+  Commands: docker image inspect owasp/modsecurity-crs:apache --format '{{.Id}} {{.RepoDigests}}'
+            docker exec <crs-container> httpd -v
 
 
 3. PYTHON RUNTIME

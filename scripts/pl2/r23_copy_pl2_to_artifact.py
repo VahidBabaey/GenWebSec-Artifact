@@ -137,7 +137,7 @@ def copy_scripts():
 README = """# Paranoia-level-2 (PL2) robustness evaluation
 
 Supports reviewer comment R2.3 and manuscript Section 5.6 (Table 11). The frozen held-out attacks
-and the benign corpora are replayed at OWASP CRS paranoia level 2, holding CRS 3.3.2, the anomaly
+and the benign corpora are replayed at OWASP CRS paranoia level 2, holding CRS 4.29.0, the anomaly
 thresholds, the backends, and the frozen generated rules fixed and raising only the paranoia level.
 This measures the existing, level-1-trained rules under a stricter CRS, not a defense retrained at PL2.
 

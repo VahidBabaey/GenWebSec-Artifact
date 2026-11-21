@@ -58,4 +58,4 @@ target_contexts:
   sqli_pages: ["login", "search", "product", "filter"]     # controlled SQLi app (SQLite), port 8080
   xss_pages:  ["search", "calc"]                            # controlled XSS app (PHP); search=JS-string, calc=eval sink
   generalization_targets: ["bwapp", "juice"]               # PHP/MySQL and Node.js/SQLite
-  waf: "Apache + ModSecurity 2.9.5 + OWASP CRS 3.3.2, paranoia level 1"
+  waf: "Apache + ModSecurity 2.9.15 + OWASP CRS 4.29.0, paranoia level 1"

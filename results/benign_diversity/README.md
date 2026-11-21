@@ -73,7 +73,7 @@ false positive the recommended shadow-mode tuning step is meant to catch.
 
 ## Tools, versions, seeds, and configuration
 
-- **WAF / environment:** Apache 2.4.52, ModSecurity 2.9.5 (blocking mode), OWASP CRS 3.3.2,
+- **WAF / environment:** Apache 2.4.68, ModSecurity 2.9.15 (blocking mode), OWASP CRS 4.29.0,
   paranoia level 1, inbound/outbound anomaly thresholds 5/4, `SecRequestBodyAccess On` with the JSON
   body processor enabled. Full versions in `environment/software-versions.txt`; CRS/ModSecurity
   configuration in `configs/crs/` and `configs/modsecurity/`.

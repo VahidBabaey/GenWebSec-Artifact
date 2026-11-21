@@ -1,8 +1,7 @@
 # Direct generation against the updated OWASP CRS (4.29.0)
 
-A complement to the persistence replay in the parent directory. Instead of replaying attacks that
-bypassed the study baseline (OWASP CRS 3.3.2), here the co-evolutionary attack agent is pointed
-directly at the latest CRS (4.29.0): from a single confirmed seed per context it generates new,
+A complement to the persistence replay in the parent directory. Instead of replaying the discovered
+bypasses, here the co-evolutionary attack agent is pointed directly at CRS 4.29.0: from a single confirmed seed per context it generates new,
 re-confirmed bypasses round by round. Supports reviewer comment R1.3 of the Frontiers revision (the
 "even the latest CRS is bypassable" strand).
 

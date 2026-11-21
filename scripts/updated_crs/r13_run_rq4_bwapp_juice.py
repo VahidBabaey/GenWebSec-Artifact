@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R1.3 (extension): replay the RQ4 held-out attacks for bwApp + Juice (valid + CRS-3.3.2-bypassing)
+"""R1.3 (extension): replay the RQ4 held-out attacks for bwApp + Juice (valid + confirmed bypasses)
    through CRS 4.29.0, status-only. Reproduces the EXACT request shapes + URIs the study sent (so CRS
    4.29.0 inspects byte-identical requests); 403 = blocked by updated CRS, non-403 = still bypasses.
    403 is an inbound (ARGS/body) decision, so it is backend-independent; all go through one CRS container."""

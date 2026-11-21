@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R1.3 (extension): replay the RQ4 held-out bwApp XSS attacks (xss_eval, valid + CRS-3.3.2-bypassing)
+"""R1.3 (extension): replay the RQ4 held-out bwApp XSS attacks (xss_eval, valid + confirmed bypasses)
    through CRS 4.29.0. XSS can be blocked inbound OR outbound, so this routes through a dedicated crs-bwapp
    container to the REAL bwApp backend with a bee/bug session (full inbound+outbound pipeline, as the study).
    Status-only: 403 = blocked by updated CRS, non-403 = still bypasses."""

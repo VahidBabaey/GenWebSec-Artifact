@@ -44,12 +44,10 @@ The defense-agent prompts, which are released under `../defense/`, were checked 
 ensure they do not embed the attack prompts; concrete payload examples in them
 have been redacted.
 
-## Revision update (CRS 4.29.0)
+## CRS 4.29.0 attack-prompt modules
 
-The Frontiers revision adds CRS-4.29 variant attack-prompt modules (one confirmed
-4.29-bypassing seed plus an updated account of the evasion methods, per context),
-used for the direct-generation experiment in
-`results/updated_crs/direct_generation/`. These modules are withheld under the same
-policy; their hashes are recorded in `manifests/provenance_checksums.csv`. Only the
-structured outcomes (counts) and the generating drivers
-(`scripts/updated_crs/`) are released.
+The attack-prompt set targets OWASP CRS 4.29.0: per context, one confirmed
+4.29-bypassing seed plus an account of the evasion methods. These modules are
+withheld under the same policy; their hashes are recorded in
+`manifests/provenance_checksums.csv`. Only the structured outcomes (counts) and the
+generating drivers (`scripts/updated_crs/`) are released.

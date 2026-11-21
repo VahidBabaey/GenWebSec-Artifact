@@ -18,13 +18,13 @@ being committed; none contained any.
 
 | File | What it is |
 | --- | --- |
-| `crs-setup.conf` | OWASP CRS 3.3.2 setup. This is where paranoia level 1 and the inbound/outbound anomaly thresholds of 5 and 4 are set. |
-| `owasp-crs.load` | The CRS bundle loader, from the distribution package. |
+| `crs-setup.conf` | The stock OWASP CRS 4.29.0 setup file, copied verbatim from the `owasp/modsecurity-crs:apache` container image used for the reported runs. Runtime options (paranoia level 1, inbound/outbound anomaly thresholds of 5 and 4, blocking mode) are set through the container's environment variables, not by editing this file; the variables and the exact `docker run` commands are in `../updated_crs/crs429_container_metadata.md`. |
 
-The CRS rule files themselves are not copied here. They are the unmodified
-Debian package `modsecurity-crs 3.3.2-1`, installable with
-`apt-get install modsecurity-crs=3.3.2-1`, and reproducing them by copy would
-add 30,000 lines of third-party rules that anyone can obtain exactly.
+The CRS rule files themselves are not copied here. They are the unmodified OWASP
+CRS 4.29.0 rules shipped in the container image, pinned exactly by the image
+digest recorded in `../updated_crs/crs429_container_metadata.md`; a digest pull
+reproduces them exactly, so copying tens of thousands of lines of third-party
+rules here would add nothing.
 
 **No CRS rule exclusions were used.** The baseline is stock CRS.
 

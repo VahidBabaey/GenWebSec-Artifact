@@ -2,18 +2,15 @@
 
 Supports reviewer comment R2.3 and the manuscript PL2 table (`tab:r23-pl2`). The frozen held-out
 attacks and the benign corpora are replayed at OWASP CRS paranoia level 2, raising only the paranoia
-level. The table reports PL2 under TWO CRS versions: the study baseline CRS 3.3.2 (this folder's
-`pl2_*` files) and the current CRS 4.29.0 (the `crs429_pl2_*` files added in the second revision round).
-This measures the existing, level-1-trained rules under a stricter CRS, not a defense retrained at PL2.
+level. The table reports PL2 under CRS 4.29.0 (the `crs429_pl2_*` files). This measures the existing,
+level-1-trained rules under a stricter CRS, not a defense retrained at PL2.
 
 ## Summary (reproduces `tab:r23-pl2`)
-- `pl2_block_rates.csv`, `pl2_benign_fp.csv` -- **CRS 3.3.2** side: per family (SQLi, XSS) and
-  configuration (CRS-only, CRS + CG-Static, CRS + CG-Adaptive), mean / min / max held-out block rate and
-  the CSIC-2012 and custom-application false positives. Block rate is the mean over held-out sets and
-  defense seeds.
-- `crs429_pl2_block_rates.csv`, `crs429_pl2_benign_fp.csv` -- **CRS 4.29.0** side (same schema), computed
-  from the attacks that bypass CRS 4.29.0 at PL1.
-- `analysis/pl2_table.py` reads both sides and prints the full two-version table.
+- `crs429_pl2_block_rates.csv`, `crs429_pl2_benign_fp.csv` -- per family (SQLi, XSS) and configuration
+  (CRS-only, CRS + CG-Static, CRS + CG-Adaptive), mean / min / max held-out block rate and the CSIC-2012
+  and custom-application false positives, computed from the attacks that bypass CRS 4.29.0 at PL1. Block
+  rate is the mean over held-out sets and defense seeds.
+- `analysis/pl2_table.py` reads these and prints the table.
 
 ## Per-held-out-set detail
 `per_config/sqli/` (40 sets = 8 contexts x 5 attack seeds), `per_config/xss/` (15 sets = 3 contexts
@@ -30,13 +27,7 @@ CRS + CG). The generated SQLi rules add a small custom-application false positiv
 0.11% adaptive); all other benign corpora stay at 0.
 
 ## Key numbers (computed from the files above)
-CRS 3.3.2 at PL2:
-- SQLi block rate: CRS-only 99.8% (96.3-100), CRS + CG 100%.
-- XSS block rate: CRS-only 75.2% (42-99), CRS + CG 99.98% (99.7-100).
-- CSIC-2012 FP: 10.3% for both CRS-only and CRS + CG.
-- Custom-application FP: SQLi 0.18% (static) / 0.11% (adaptive); XSS 0; per-backend 0.
-
-CRS 4.29.0 at PL2 (the newer CRS already blocks almost all of its own PL1 bypasses):
+CRS 4.29.0 at PL2:
 - SQLi block rate: CRS-only 100%, CRS + CG 100%. XSS: CRS-only 98.8%, CRS + CG 100%.
 - CSIC-2012 FP: 10.5% (CRS-determined). Custom-application FP: SQLi 0.85% (CRS-only) -> 1.13% (CG);
   XSS 0.90% for both. The newer CRS, not the generated rules, is the main FP source at PL2.

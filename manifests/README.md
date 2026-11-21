@@ -13,11 +13,11 @@ manifests/
 ├── bypass_verification.md     R1.1: two-stage bypass criterion -> per-request outcome files
 ├── updated_crs.md             R1.3: persistence under OWASP CRS 4.29.0
 ├── crs429.md                  CRS-4.29.0 attack generation + co-evolved-rule replay (tab:crs429-gen/-cg)
-├── diversity.md               attack diversity, baseline + CRS-4.29 (tab:div-baseline, tab:div-crs429)
+├── diversity.md               attack diversity under CRS 4.29.0 (tab:div-crs429)
 ├── rule_economy.md            R1.5: rule-count and clustering economy
 ├── denominators.md            R1.6: held-out denominators and Dalfox replay
 ├── nonllm.md                  R2.1: non-LLM funnel (sqlmap, CSIC, FuzzDB, WAF-A-MoLE, Dalfox)
-├── pl2.md                     R2.3: paranoia-level-2 robustness, CRS 3.3.2 and 4.29.0 (tab:r23-pl2)
+├── pl2.md                     R2.3: paranoia-level-2 robustness under CRS 4.29.0 (tab:r23-pl2)
 ├── benign_diversity.md        R2.5: benign-diversity false-positive supplement
 └── README.md
 ```

@@ -86,9 +86,9 @@ records and the configuration files themselves.
 
 | Component | Version |
 | --- | --- |
-| Apache | 2.4.52 |
-| ModSecurity | 2.9.5, blocking mode |
-| OWASP CRS | 3.3.2, paranoia level 1, no rule exclusions |
+| Apache | 2.4.68 |
+| ModSecurity | 2.9.15, blocking mode |
+| OWASP CRS | 4.29.0, paranoia level 1, no rule exclusions |
 | CRS anomaly thresholds | inbound 5, outbound 4 |
 
 **Runtime**

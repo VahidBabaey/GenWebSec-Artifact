@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R1.3 attack replay: send EVERY RQ1 (CRS-3.3.2-bypassing) attack through CRS 4.29.0, status-only.
+"""R1.3 attack replay: send EVERY RQ1 confirmed bypass through CRS 4.29.0, status-only.
    403 = blocked by updated CRS ; non-403 = still bypasses. Host: localhost (baseline-faithful).
    Writes a per-request CSV (payloads hashed) + per-context summary; reconciles counts to RQ1."""
 import urllib.request, urllib.parse, urllib.error, glob, os, csv, re, hashlib

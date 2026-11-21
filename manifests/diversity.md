@@ -1,8 +1,7 @@
-# Attack diversity (baseline CRS 3.3.2 and CRS 4.29.0)
+# Attack diversity (CRS 4.29.0)
 
 Maps the attack-diversity appendix tables to their file. Confirms that the large attack counts reflect
-genuine variety rather than near-duplicates. Supports manuscript tables `tab:div-baseline` (B7) and
-`tab:div-crs429` (B8).
+genuine variety rather than near-duplicates. Supports manuscript table `tab:div-crs429` (B8).
 
 ## Data and script
 `results/diversity/attack_diversity.csv` -- one row per (attack_set, family, entry point) for the six
@@ -16,9 +15,8 @@ custom-application pages, with:
 `analysis/attack_diversity.py` prints both tables.
 
 ## Key numbers
-- Baseline (`tab:div-baseline`): distinct 97.8-100%, 7-11 techniques.
-- Direct against CRS 4.29.0 (`tab:div-crs429`): distinct 90.5-100%, 3-12 techniques.
+- CRS 4.29.0 (`tab:div-crs429`): distinct 90.5-100%, 3-12 techniques.
 
 ## Notes
 - Only aggregate diversity metrics and method names are released; no attack strings. Derived by the
-  diversity tagger over the baseline (T4) and CRS-4.29 (T10) generated-attack sets.
+  diversity tagger over the CRS-4.29 (T10) generated-attack set.

@@ -92,10 +92,9 @@ for key in ["juice (all)", "juice:login", "juice:search"]:
 # ---- README ----
 readme = f"""# R1.3 - Attack-surface persistence under an UPDATED OWASP CRS (+ benign FP + audit)
 
-Reviewer R1.3 asks how much of the attack surface that bypassed the paper's baseline (OWASP CRS 3.3.2)
-persists under an updated CRS, with benign false-positive rates reported alongside, plus representative
-audit logs showing which request fields were inspected. The paper's main experiments remain on CRS 3.3.2;
-this is an added comparison.
+Reviewer R1.3 asks how much of the discovered attack surface persists under OWASP CRS 4.29.0, with
+benign false-positive rates reported alongside, plus representative audit logs showing which request
+fields were inspected.
 
 ## Setup (host unchanged; updated CRS in a container beside it)
 - Updated WAF: official `owasp/modsecurity-crs:apache` -> **OWASP CRS 4.29.0** on **ModSecurity 2.9.15**,
@@ -107,8 +106,8 @@ this is an added comparison.
 - Measurement is status-only: HTTP 403 = blocked by the updated CRS; any non-403 = still bypasses.
 
 ## What was replayed
-- Attacks: EVERY RQ1 attack that bypassed CRS 3.3.2 (9,159 SQLi + 2,892 XSS; reconciled exactly to the
-  RQ1 totals). Status-only through CRS 4.29.0.
+- Attacks: EVERY RQ1 confirmed bypass (9,159 SQLi + 2,892 XSS; reconciled exactly to the RQ1 totals),
+  replayed status-only through CRS 4.29.0.
 - Benign (false positives): the customapp/customxss benign corpora (2,000 + 2,000) and, additionally,
   the bwApp, juice, and CSIC-2012 benign corpora (14,363). FP is decided by CRS at the inbound phase
   before proxying, so it is backend-independent.
@@ -124,7 +123,7 @@ Benign false positives under CRS 4.29.0 (see `R13_benign_fp.csv`):
   CSIC {bex['csic']['fp_403']}/{bex['csic']['n']} = {bex['csic']['fp_rate_pct']}% (6 Spanish-language POSTs with Latin-1-encoded accents).
 - Total benign tested = {tot_ben_n}; total false positives = {tot_ben_fp}.
 
-RQ4 held-out attacks (bwApp, Juice; valid + CRS-3.3.2-bypassing) under CRS 4.29.0 (see `R13_rq4_bwapp_juice_persistence.csv`):
+RQ4 held-out attacks (bwApp, Juice; valid + confirmed bypasses) under CRS 4.29.0 (see `R13_rq4_bwapp_juice_persistence.csv`):
 - bwApp SQLi: {rq4['bwapp (all)']['blocked_crs429']}/{rq4['bwapp (all)']['n_distinct']} blocked = {rq4['bwapp (all)']['block_rate_pct']}% (login 100%, search {rq4['bwapp:search']['block_rate_pct']}%).
 - bwApp XSS (xss_eval, eval sink): {rqx['bwapp:xss_eval']['blocked_crs429']}/{rqx['bwapp:xss_eval']['n_distinct']} blocked = {rqx['bwapp:xss_eval']['block_rate_pct']}% ({rqx['bwapp:xss_eval']['still_bypassing']} still bypass) - routed through the real bwApp backend with a bee/bug session so inbound AND outbound CRS both apply.
 - Juice SQLi: {rq4['juice (all)']['blocked_crs429']}/{rq4['juice (all)']['n_distinct']} blocked = {rq4['juice (all)']['block_rate_pct']}% (login {rq4['juice:login']['block_rate_pct']}%, search {rq4['juice:search']['block_rate_pct']}% - the context breakouts contain no classic SQLi tokens and evade generic CRS entirely). Juice has no XSS context (JSON API).

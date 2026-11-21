@@ -13,8 +13,8 @@ The bypass criterion is two-stage:
 * **Route A (backend, no WAF):** the attack is replayed against the custom app with no WAF in front;
   the exploit oracle confirms it actually works (SQLi: login/data oracle; XSS: a JS dialog fires in a
   real headless browser). This establishes `backend_valid`.
-* **Route B (WAF):** the identical string is sent through the real WAF (Apache 2.4.52 +
-  ModSecurity 2.9.5 + OWASP CRS 3.3.2, plus the run's frozen custom rules). Status 403 = blocked;
+* **Route B (WAF):** the identical string is sent through the real WAF (Apache 2.4.68 +
+  ModSecurity 2.9.15 + OWASP CRS 4.29.0, plus the run's frozen custom rules). Status 403 = blocked;
   otherwise the exploit is re-confirmed on the WAF-returned response (`valid_through_waf`). A request
   that is not-403 but whose exploit does **not** fire through the WAF is a *false bypass*.
 
@@ -173,7 +173,7 @@ payload only by `payload_sha1` (stable 16-hex). Outcomes, funnels, counts, and s
 in full.
 
 ## Environment / provenance
-WAF: Apache 2.4.52 + ModSecurity 2.9.5 + OWASP CRS 3.3.2 (PL1, anomaly 5/4, blocking rule 949110),
+WAF: Apache 2.4.68 + ModSecurity 2.9.15 + OWASP CRS 4.29.0 (PL1, anomaly 5/4, blocking rule 949110),
 Ubuntu 22.04 (WSL2). Custom SQLi app: Flask on :8080. Custom XSS app: php -S on :8094 (search) / :8095
 (calc), reverse-proxied by the WAF at `/customxss/<page>.php`. Rules frozen per source run under
 `results/V2/CustomApp_C1{,-PP}` (SQLi) and `CustomApp_C2{,-PP}` (XSS). Scripts in `scripts/`.

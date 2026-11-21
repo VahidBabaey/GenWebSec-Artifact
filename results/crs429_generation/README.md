@@ -1,7 +1,6 @@
 # CRS-4.29.0 attack generation
 
-The co-evolutionary attack agent run against the **updated** OWASP Core Rule Set
-(CRS 4.29.0), rather than the 3.3.2 baseline used in the main experiments, on the
+The co-evolutionary attack agent run against OWASP Core Rule Set 4.29.0 on the
 six controlled custom-application injection contexts. This is the data behind the
 paper's CRS-4.29 attack-generation table (`tab:crs429-gen`): for each context, how
 many attacks the agent generates, how many are execution-valid, and what fraction

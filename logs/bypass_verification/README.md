@@ -18,8 +18,6 @@ fails under the service's `PrivateTmp`; `/var/cache/modsecurity` ends up `root:r
 - `audit_summary.csv` — one row per representative request: HTTP status, whether ModSecurity denied it,
   the matched CRS rule ids, the matched custom rule ids, message count, a redacted request line, and
   sample rule messages. Raw payloads removed.
-- `audit_H_parts_redacted.txt` — the audit trailer (part H: matched rules, messages, action) per
-  request, with matched payload data and the URI stripped.
 - `access_log_excerpt_redacted.txt` — the same representative requests in the Apache access log (status
   field kept, query redacted), corroborating the audit outcomes.
 

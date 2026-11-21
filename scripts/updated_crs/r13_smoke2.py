@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R1.3 smoke v2: SAME tests but with Host: localhost (faithful to the CRS-3.3.2 baseline, which used
+"""R1.3 smoke v2: SAME tests but with Host: localhost (faithful to the study baseline, which used
 http://localhost/...). This removes the 920350 numeric-IP +3 anomaly artifact that would overcount blocks."""
 import subprocess, urllib.request, urllib.parse, urllib.error, glob, json, re, time
 

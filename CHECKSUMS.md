@@ -3,7 +3,7 @@
 ## `SHA256SUMS` (every released file)
 
 `SHA256SUMS` at the repository root lists a SHA-256 hash for every released file
-(474 files), in the standard `<hash>  <path>` format. Verify the whole artifact
+(472 files), in the standard `<hash>  <path>` format. Verify the whole artifact
 from the repository root with:
 
 ```
@@ -17,7 +17,7 @@ released here:
 | --- | --- |
 | benign corpora | `data/benign/` (7 files) |
 | final per-seed rulesets | `rules/final_rulesets/` (40 files) |
-| experiment configuration files | `configs/` (16 files) |
+| experiment configuration files | `configs/` (15 files) |
 | released result tables | `results/` (250 files, including the PL2 evaluation `results/pl2/` and the second-revision CRS-4.29 generation/CG, attack-diversity, and FuzzDB/WAF-A-MoLE additions) |
 
 Regenerating `SHA256SUMS` after any change and re-running the check is how a

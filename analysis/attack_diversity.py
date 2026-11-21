@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Attack-diversity appendix tables. Reproduces the paper's two diversity tables:
-tab:div-baseline (Table B7, attacks against baseline CRS 3.3.2) and
+"""Attack-diversity appendix table. Reproduces the paper's diversity table
 tab:div-crs429 (Table B8, attacks generated directly against CRS 4.29.0).
 
-Each table reports, per custom-application entry point, the share of generated
+The table reports, per custom-application entry point, the share of generated
 attacks whose exact text is unique ("Distinct (%)") and the number of distinct
 evasion methods the set uses ("Tech.", out of 15 for SQLi and 12 for XSS).
 
@@ -20,8 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CSV = ROOT / "results" / "diversity" / "attack_diversity.csv"
 
 SETS = [
-    ("baseline", "Baseline CRS 3.3.2  (Table B7 / tab:div-baseline)"),
-    ("crs429", "Direct against CRS 4.29.0  (Table B8 / tab:div-crs429)"),
+    ("crs429", "CRS 4.29.0  (Table B8 / tab:div-crs429)"),
 ]
 
 

@@ -17,7 +17,6 @@ reviewer comment R1.1 of the Frontiers revision.
 ## Representative audit-log records (blocks vs other responses)
 `logs/bypass_verification/`
 - `audit_summary.csv` -- per representative request: HTTP status, ModSecurity deny action, matched CRS vs custom rule IDs, rule messages.
-- `audit_H_parts_redacted.txt` -- audit trailer (matched rules + action) per request, matched data redacted.
 - `access_log_excerpt_redacted.txt` -- Apache access-log statuses for the same requests (query redacted).
 - `README.md` -- how the audit replay was run (`SecAuditEngine On`).
 
@@ -29,4 +28,4 @@ reviewer comment R1.1 of the Frontiers revision.
   `payload_sha1`; audit and access-log excerpts are redacted.
 - Two scripts (`setup_xss_env.py`, `r11_audit_capture.py`) contain canonical, textbook example payloads
   (`alert(1)`, `' OR '1'='1`) used as representative probes; these are not from the generated corpus.
-- Environment: Apache 2.4.52 + ModSecurity 2.9.5 + OWASP CRS 3.3.2; custom SQLi/XSS apps, bWAPP, Juice Shop.
+- Environment: Apache 2.4.68 + ModSecurity 2.9.15 + OWASP CRS 4.29.0; custom SQLi/XSS apps, bWAPP, Juice Shop.
